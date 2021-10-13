@@ -56,7 +56,7 @@ public class OnTaskActivity extends AppCompatActivity {
 
         Intent i = getIntent();/*-- GET & DISPLAY TASK NAME OVERVIEW--*/
         String taskDisplay = i.getStringExtra("TASKDISPLAY");
-        ((TextView) findViewById(R.id.task_display)).setText(taskDisplay);
+        ((TextView) findViewById(R.id.task_display)).setText("TASK: " + taskDisplay);
 
         taskTimerDisplay = findViewById(R.id.text_view_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
@@ -98,7 +98,7 @@ public class OnTaskActivity extends AppCompatActivity {
 //EDIT: HANGGANG DITO LOL
 
 
-        // START BUTTON WHEN CLICKED NAGIGING PAUSE BUTTON
+        // START BUTTON WHEN CLICKED NAGIGING PAUSE BUTTON (SUPER GULO PA NITO HUHU)
         startCountdownTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
