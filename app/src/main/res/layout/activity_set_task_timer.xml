@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d8cddd"
+    tools:context=".SetTaskTimerActivity">
+
+    <Button
+        android:id="@+id/back"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="107dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/back_button"
+        android:onClick="goBack"
+        android:text="back"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_button"
+        app:layout_constraintVertical_bias="0.577" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="403dp"
+        android:layout_height="419dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/set_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/AddTaskName"
+            android:layout_width="141dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="TASK NAME:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/taskname"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="197dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            android:editable="true"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Enter Task Name"
+            android:inputType="textLongMessage|text"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#837B86"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.086"
+            app:layout_constraintStart_toEndOf="@+id/AddTaskName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/minuteInput"
+            android:layout_width="115dp"
+            android:layout_height="67dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Minutes"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.229"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/taskname"
+            app:layout_constraintVertical_bias="0.421" />
+
+        <EditText
+            android:id="@+id/minuteInput2"
+            android:layout_width="115dp"
+            android:layout_height="67dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Minutes"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.229"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/taskname"
+            app:layout_constraintVertical_bias="0.87" />
+
+        <EditText
+            android:id="@+id/secondsInput"
+            android:layout_width="110dp"
+            android:layout_height="69dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Seconds"
+            android:inputType="number"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.357"
+            app:layout_constraintStart_toEndOf="@+id/minuteInput"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.534" />
+
+        <EditText
+            android:id="@+id/secondsInput2"
+            android:layout_width="110dp"
+            android:layout_height="69dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Seconds"
+            android:inputType="number"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.357"
+            app:layout_constraintStart_toEndOf="@+id/minuteInput"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="SET ON TASK TIMER"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FAF8F8"
+            app:layout_constraintBottom_toTopOf="@+id/minuteInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AddTaskName"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET OFF TASK TIMER"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FAF8F8"
+            app:layout_constraintBottom_toTopOf="@+id/minuteInput2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minuteInput"
+            app:layout_constraintVertical_bias="0.829" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/set_button"
+        android:layout_width="265dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/rounded_corners"
+        android:onClick="setTaskTimer"
+        android:text="SET"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFEBB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
