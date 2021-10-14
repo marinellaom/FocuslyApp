@@ -1,13 +1,12 @@
 package com.example.focusly;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 public class OnTaskActivity extends AppCompatActivity {
 
@@ -28,16 +26,13 @@ public class OnTaskActivity extends AppCompatActivity {
     private CountDownTimer taskCountdownTimer;
 
     // Temporary default time na naka-set lol
-    private static long startTimeInput = 900000;
-
-
-    private long timeLeft = startTimeInput;
+    private long startTimeInput;
+    private long timeLeft;
     private long endTime;
 
-
     //EDIT: TRY SET INPUT TIME AS TIMER
-    EditText editText;
-    Button button;
+    private EditText editText;
+    private Button set_button;
 
 
 
@@ -63,35 +58,30 @@ public class OnTaskActivity extends AppCompatActivity {
         resetCountdownTimer = findViewById(R.id.button_reset);
 
         //EDIT: TRY SET INPUT TIME AS TIMER
-        editText = (EditText) findViewById(R.id.minute);
-        button = (Button) findViewById(R.id.button1);
+        editText = findViewById(R.id.minute);
+        set_button = findViewById(R.id.button1);
 
 
         wow = findViewById(R.id.wow); /*-- TRY LANG SOUND --*/
 
 
         //EDIT: TRY SET INPUT TIME AS TIMER *UMIYAK SO MUCH*
-        button.setOnClickListener(new View.OnClickListener() {
+        set_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = editText.getText().toString();
-                if (!text.equalsIgnoreCase("")) {
-                    long minutes = Long.valueOf(text);
-                    new CountDownTimer(minutes * 60000, 1000) {
-                        @Override
-                        public void onTick(long millisUntilFinished) {
-                            String text = String.format(Locale.getDefault(), " %02d min: %02d sec",
-                                    TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60,
-                                    TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60);
-                            taskTimerDisplay.setText(text);
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            taskTimerDisplay.setText("DONE");
-                        }
-                    }.start();
+                if (text.length() == 0) {
+                    Toast.makeText(OnTaskActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+                long millisInput = Long.parseLong(text) * 60000;
+                if (millisInput  == 0){
+                    Toast.makeText(OnTaskActivity.this, "Positive Number Only!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                setTime(millisInput);
+                editText.setText("");
+
             }
         });
 
@@ -120,132 +110,102 @@ public class OnTaskActivity extends AppCompatActivity {
             }
         });
 
-        updateCountdownText();
+    }
+
+    private void setTime(long milliseconds){
+        startTimeInput = milliseconds;
+        resetTimer();
     }
 
 
-            /*---- COUNTDOWN | START PAUSE BUTTON ----*/
-            public void startTimer(){
+    /*---- COUNTDOWN | START PAUSE BUTTON ----*/
+    public void startTimer(){
 
-                endTime = System.currentTimeMillis() + timeLeft;
-
-
-                taskCountdownTimer = new CountDownTimer(timeLeft, 1000) {
-                    @Override
-                    public void onTick(long timeUntilFinished) {
-                        timeLeft = timeUntilFinished;
-                        updateCountdownText();
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        isTimerRunning = false;
-                        updateButtons();
-
-                    }
-                }.start();
-
-                isTimerRunning = true;
-                updateButtons();
+        endTime = System.currentTimeMillis() + timeLeft;
 
 
+        taskCountdownTimer = new CountDownTimer(timeLeft, 1000) {
+            @Override
+            public void onTick(long timeUntilFinished) {
+                timeLeft = timeUntilFinished;
+                updateCountdownText();
             }
 
-
-            /*---- PAUSE COUNTDOWN TIMER ----*/
-            public void pauseTimer(){
-                taskCountdownTimer.cancel();
+            @Override
+            public void onFinish() {
                 isTimerRunning = false;
-                updateButtons();
+                updateTimeInterface();
 
             }
+        }.start();
 
-            /*---- RESET COUNTDOWN TIMER ----*/
-            public void resetTimer(){
-                timeLeft = startTimeInput;
-                updateCountdownText();
-                updateButtons();
+        isTimerRunning = true;
+        updateTimeInterface();
 
+
+    }
+
+
+    /*---- PAUSE COUNTDOWN TIMER ----*/
+    public void pauseTimer(){
+        taskCountdownTimer.cancel();
+        isTimerRunning = false;
+        updateTimeInterface();
+
+    }
+
+    /*---- RESET COUNTDOWN TIMER ----*/
+    public void resetTimer(){
+        timeLeft = startTimeInput;
+        updateCountdownText();
+        updateTimeInterface();
+
+    }
+
+    /*---- UPDATE COUNTDOWN TEXT DISPLAY ----*/
+    public void updateCountdownText(){
+        int hours = (int) (timeLeft / 1000) / 3600;
+        int minutes = (int) ((timeLeft/1000)%3600)/60;
+        int seconds = (int) (timeLeft/1000)%60;
+
+        String timeLeftDisplay;
+        if (hours > 0){
+            timeLeftDisplay = String.format(Locale.getDefault(),
+                    "%d:%02d:%02d", hours, minutes, seconds);
+        } else{
+            timeLeftDisplay = String.format(Locale.getDefault(),
+                    "%02d:%02d", minutes, seconds);
+        }
+
+        taskTimerDisplay.setText(timeLeftDisplay);
+
+    }
+
+    /*---- UPDATE COUNTDOWN BUTTONS | VISIBILITY & BUTTON TEXT ----*/
+    public void updateTimeInterface(){
+        if(isTimerRunning){
+            editText.setVisibility(View.INVISIBLE);
+            set_button.setVisibility(View.INVISIBLE);
+
+            resetCountdownTimer.setVisibility(View.INVISIBLE);
+            startCountdownTimer.setText("PAUSE");
+        } else {
+            editText.setVisibility(View.VISIBLE);
+            set_button.setVisibility(View.VISIBLE);
+            startCountdownTimer.setText("START");
+
+            if (timeLeft < 1000){
+                startCountdownTimer.setVisibility(View.INVISIBLE);
+            } else {
+                startCountdownTimer.setVisibility(View.VISIBLE);
             }
 
-            /*---- UPDATE COUNTDOWN TEXT DISPLAY ----*/
-            public void updateCountdownText(){
-                int minutes = (int) (timeLeft/1000)/60;
-                int seconds = (int) (timeLeft/1000)%60;
-
-                String timeLeftDisplay = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
-
-                taskTimerDisplay.setText(timeLeftDisplay);
-
+            if (timeLeft < startTimeInput) {
+                resetCountdownTimer.setVisibility(View.VISIBLE);
+            } else {
+                resetCountdownTimer.setVisibility(View.INVISIBLE);
             }
-
-            /*---- UPDATE COUNTDOWN BUTTONS | VISIBILITY & BUTTON TEXT ----*/
-            public void updateButtons(){
-                if(isTimerRunning){
-                    resetCountdownTimer.setVisibility(View.INVISIBLE);
-                    startCountdownTimer.setText("PAUSE");
-                } else {
-                    startCountdownTimer.setText("RESUME");
-
-                    if (timeLeft < 1000){
-                        startCountdownTimer.setVisibility(View.INVISIBLE);
-                    } else {
-                        startCountdownTimer.setVisibility(View.VISIBLE);
-                    }
-
-                    if (timeLeft < startTimeInput) {
-                        resetCountdownTimer.setVisibility(View.VISIBLE);
-                    } else {
-                        resetCountdownTimer.setVisibility(View.INVISIBLE);
-                    }
-                    if (timeLeft == 0){
-                        Intent i = new Intent(this, DoneOnTaskActivity.class);
-                        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
-
-                        mediaPlayer.start();
-                        startActivity(i);
-
-                        if(isTimerRunning){
-                            timeLeft = startTimeInput;
-                            taskCountdownTimer.cancel();
-                            updateCountdownText();
-                        }
-                    }
-                }
-            }
-
-
-            /*---- KEEPS THE TIMER RUNNING ON BACKGROUND OR WHEN ORIENTATION CHANGES----*/
-
-            @Override
-            protected void onSaveInstanceState(@NonNull Bundle outState) {
-                super.onSaveInstanceState(outState);
-                outState.putLong("countdownLeft", timeLeft);
-                outState.putBoolean("timerRunning", isTimerRunning);
-                outState.putLong("timeEnd", endTime);
-            }
-
-            @Override
-            protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-                super.onRestoreInstanceState(savedInstanceState);
-
-                timeLeft = savedInstanceState.getLong("countdownLeft");
-                isTimerRunning = savedInstanceState.getBoolean("timerRunning");
-
-                updateCountdownText();
-                updateButtons();
-
-                    if(isTimerRunning){
-                        endTime = savedInstanceState.getLong("timeEnd");
-                        timeLeft = endTime - System.currentTimeMillis();
-                        startTimer();
-                    }
-            }
-
-
-            /*---- DONE BUTTON IF THE USER FINISHED TASK EARLY BEFORE TIME RUNS OUT----*/
-            public void doneTaskEarly(View view){
-
+            if (timeLeft == 0){
                 Intent i = new Intent(this, DoneOnTaskActivity.class);
                 final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
 
@@ -258,6 +218,76 @@ public class OnTaskActivity extends AppCompatActivity {
                     updateCountdownText();
                 }
             }
+        }
+    }
+
+
+    /*---- KEEPS THE TIMER RUNNING ON BACKGROUND OR WHEN ORIENTATION CHANGES----*/
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putLong("startTime", startTimeInput);
+        editor.putLong("millisLeft", timeLeft);
+        editor.putBoolean("timerRunning", isTimerRunning);
+        editor.putLong("timeEnd", endTime);
+
+        editor.apply();
+
+        if (taskCountdownTimer != null){
+            taskCountdownTimer.cancel();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+
+        startTimeInput = prefs.getLong("startTime", 600000);
+        timeLeft = prefs.getLong("millisLeft", startTimeInput);
+        isTimerRunning = prefs.getBoolean("timerRunning", false);
+
+
+        updateCountdownText();
+        updateTimeInterface();
+
+        if(isTimerRunning){
+            endTime = prefs.getLong("timeEnd", 0);
+            timeLeft = endTime - System.currentTimeMillis();
+
+            if (timeLeft < 0){
+                timeLeft = 0;
+                isTimerRunning = false;
+                updateCountdownText();
+                updateTimeInterface();
+            } else {
+                startTimer();
+            }
+        }
+    }
+
+    /*---- DONE BUTTON IF THE USER FINISHED TASK EARLY BEFORE TIME RUNS OUT----*/
+    public void doneTaskEarly(View view){
+
+        Intent i = new Intent(this, DoneOnTaskActivity.class);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
+
+        mediaPlayer.start();
+        startActivity(i);
+
+        if(isTimerRunning){
+            timeLeft = startTimeInput;
+            taskCountdownTimer.cancel();
+            updateCountdownText();
+        }
+    }
 
 
 

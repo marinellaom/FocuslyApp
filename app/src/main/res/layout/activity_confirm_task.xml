@@ -93,7 +93,6 @@
         android:id="@+id/task_name_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="name of task"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F6A9BD"
         app:layout_constraintBottom_toBottomOf="parent"

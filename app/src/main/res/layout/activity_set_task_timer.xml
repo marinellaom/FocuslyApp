@@ -60,6 +60,7 @@
             android:ems="10"
             android:gravity="center"
             android:hint="Enter Task Name"
+            android:maxLength="20"
             android:inputType="textLongMessage|text"
             android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
