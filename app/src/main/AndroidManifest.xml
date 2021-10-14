@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Focusly">
         <activity
+            android:name=".ContinueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OffTaskActivity"
+            android:exported="true" />
+        <activity
             android:name=".DoneOnTaskActivity"
             android:exported="true" />
         <activity

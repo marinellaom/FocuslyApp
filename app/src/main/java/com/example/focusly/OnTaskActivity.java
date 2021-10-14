@@ -59,7 +59,7 @@ public class OnTaskActivity extends AppCompatActivity {
 
         //EDIT: TRY SET INPUT TIME AS TIMER
         editText = findViewById(R.id.minute);
-        set_button = findViewById(R.id.button1);
+        set_button = findViewById(R.id.continute_task_btn);
 
 
         wow = findViewById(R.id.wow); /*-- TRY LANG SOUND --*/
@@ -206,10 +206,13 @@ public class OnTaskActivity extends AppCompatActivity {
                 resetCountdownTimer.setVisibility(View.INVISIBLE);
             }
             if (timeLeft == 0){
-                Intent i = new Intent(this, DoneOnTaskActivity.class);
-                final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
+//                Intent i = new Intent(this, DoneOnTaskActivity.class);
+//                final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
+//
+//                mediaPlayer.start();
+//                startActivity(i);
 
-                mediaPlayer.start();
+                Intent i = new Intent(OnTaskActivity.this, ContinueActivity.class);
                 startActivity(i);
 
                 if(isTimerRunning){
@@ -241,6 +244,7 @@ public class OnTaskActivity extends AppCompatActivity {
 
         if (taskCountdownTimer != null){
             taskCountdownTimer.cancel();
+
         }
     }
 
