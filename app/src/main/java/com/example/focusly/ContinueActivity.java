@@ -1,11 +1,14 @@
 package com.example.focusly;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ContinueActivity extends AppCompatActivity {
 
@@ -20,18 +23,48 @@ public class ContinueActivity extends AppCompatActivity {
         cont = findViewById(R.id.continute_task_btn);
         rest = findViewById(R.id.rest_btn);
 
+//        cont.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(ContinueActivity.this, OnTaskActivity.class);
+//                startActivity(i);
+//            }
+//        });
+
+
+        // POP UP CONFIRMATION
         cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ContinueActivity.this, OnTaskActivity.class);
-                startActivity(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ContinueActivity.this);
+
+                builder.setCancelable(true);
+                builder.setTitle("Are you sure?");
+//                builder.setMessage("Click 'OK' if you would like to continue your task");
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent in = new Intent(ContinueActivity.this, OnTaskActivity.class);
+                        startActivity(in);
+                    }
+                });
+                builder.show();
             }
         });
+
 
         rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ContinueActivity.this, OffTaskActivity.class);
+                Intent i = new Intent(ContinueActivity.this, OffTaskOptionsActivity.class);
                 startActivity(i);
             }
         });

@@ -61,27 +61,41 @@ public class SetTaskTimerActivity extends AppCompatActivity{
         i.putExtra("TASKINPUT3", taskinput3);
         i.putExtra("TASKINPUT4", taskinput4);
 
-//
-//        String inputMinute = ((EditText)findViewById(R.id.minuteInput)).getText().toString();
-//        String inputSecond = ((EditText)findViewById(R.id.secondsInput)).getText().toString();
-//
-//        /*--- VALIDATE USER INPUT IF EMPTY---*/
-//        if (TextUtils.isEmpty(taskinput)){
-//            Toast.makeText(this, "Task name cannot be empty!", Toast.LENGTH_SHORT).show();
-//            return;
-//            } else if ((taskinput).trim().length()==0){
-//                Toast.makeText(this, "Invalid Input!", Toast.LENGTH_SHORT).show();
-//                return;
-//            } else if (inputMinute.length()  == 0){
-//                Toast.makeText(this, "Field cannot be empty!", Toast.LENGTH_SHORT).show();
-//                return;
-//            } else if (inputSecond.length()  == 0){
-//                Toast.makeText(this, "Field cannot be empty!", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
 
+        /*--- VALIDATE USER INPUT IF EMPTY---*/
+        // INPUT VALIDATION - MIN / MAX / EMPTY / ZERO
+        if (TextUtils.isEmpty(taskinput)){
+            Toast.makeText(this, "Task name cannot be empty!", Toast.LENGTH_SHORT).show();
+            return;
+            } else if ((taskinput).trim().length()==0){
+                Toast.makeText(this, "Invalid Input!", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (taskinput1.length()  == 0){
+                Toast.makeText(this, "Field cannot be empty!", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (Integer.valueOf(taskinput1) > 45){
+                Toast.makeText(this, "ON TASK: 45mins maximum time only.", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (Integer.valueOf(taskinput1) < 15){
+                Toast.makeText(this, "ON TASK: 15mins minimum time only.", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (taskinput2.length()  == 0){
+                Toast.makeText(this, "Field cannot be empty!", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (Integer.valueOf(taskinput2) > 30){
+                Toast.makeText(this, "OFF TASK: 30mins maximum time only.", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (Integer.valueOf(taskinput2) < 10){
+                Toast.makeText(this, "OFF TASK: 10mins minimum time only.", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (Integer.valueOf(taskinput3) > 60){
+                Toast.makeText(this, "SECONDS: Invalid Input!", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (Integer.valueOf(taskinput4) > 60){
+                Toast.makeText(this, "SECONDS: Invalid Input!", Toast.LENGTH_SHORT).show();
+                return;
+            }
         startActivity(i);
     }
 
 }
-

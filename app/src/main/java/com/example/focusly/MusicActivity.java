@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class OnTaskActivity extends AppCompatActivity {
+public class MusicActivity extends AppCompatActivity {
 
     private TextView taskTimerDisplay;
     private Button startCountdownTimer;
@@ -45,7 +45,7 @@ public class OnTaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_task);
+        setContentView(R.layout.activity_music);
 
         SetTaskTimerActivity set = new SetTaskTimerActivity();
 
@@ -71,12 +71,12 @@ public class OnTaskActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String text = editText.getText().toString();
                 if (text.length() == 0) {
-                    Toast.makeText(OnTaskActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MusicActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 long millisInput = Long.parseLong(text) * 60000;
                 if (millisInput  == 0){
-                    Toast.makeText(OnTaskActivity.this, "Positive Number Only!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MusicActivity.this, "Positive Number Only!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 setTime(millisInput);
@@ -212,7 +212,7 @@ public class OnTaskActivity extends AppCompatActivity {
 //                mediaPlayer.start();
 //                startActivity(i);
 
-                Intent i = new Intent(OnTaskActivity.this, ContinueActivity.class);
+                Intent i = new Intent(MusicActivity.this, ContinueActivity.class);
                 startActivity(i);
 
                 if(isTimerRunning){
