@@ -113,7 +113,7 @@
         app:srcCompat="@drawable/piano" />
 
     <ImageView
-        android:id="@+id/libmusic_button"
+        android:id="@+id/localmusic_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="#F6A9bD"

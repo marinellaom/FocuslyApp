@@ -37,6 +37,8 @@ public class MusicActivity extends AppCompatActivity {
 
     // SOUNDS
     private ImageView natureSounds;
+    private ImageView pianoSounds;
+    private ImageView localMusicFile;
 
 
 
@@ -67,26 +69,50 @@ public class MusicActivity extends AppCompatActivity {
 
         Button wow = findViewById(R.id.done_btn); /*-- TRY LANG SOUND --*/
 
-//        natureSounds.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//              final MediaPlayer mediaPlayer = MediaPlayer.create(MusicActivity.this, R.raw.nature);
-//              mediaPlayer.start();
-//
-//            }
-//        });
+
 
         //EDIT: MUSIC
         natureSounds = (ImageView) findViewById(R.id.rain_button);
+        pianoSounds = (ImageView) findViewById(R.id.piano_button);
         final MediaPlayer mediaPlayer1 = MediaPlayer.create(MusicActivity.this, R.raw.nature);
+        final MediaPlayer mediaPlayer2 = MediaPlayer.create(MusicActivity.this, R.raw.piano);
+
         natureSounds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mediaPlayer1.isPlaying()){
                     mediaPlayer1.pause();
+
                 } else {
                     mediaPlayer1.start();
+
+
                 }
+            }
+        });
+
+        pianoSounds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mediaPlayer2.isPlaying()){
+                    mediaPlayer2.pause();
+
+                } else {
+                    mediaPlayer2.start();
+
+
+                }
+            }
+        });
+
+
+        localMusicFile = (ImageView) findViewById(R.id.localmusic_button);
+        localMusicFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(Intent.ACTION_GET_CONTENT);
+                in.setType("*/*");
+                startActivityForResult(in, 1);
             }
         });
 
