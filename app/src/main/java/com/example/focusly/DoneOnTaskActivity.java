@@ -21,7 +21,7 @@ public class DoneOnTaskActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DoneOnTaskActivity.this, OffTaskActivity.class);
+                Intent i = new Intent(DoneOnTaskActivity.this, OffTaskOptionsActivity.class);
                 startActivity(i);
             }
         });

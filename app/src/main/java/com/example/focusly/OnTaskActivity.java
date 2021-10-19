@@ -164,19 +164,11 @@ public class OnTaskActivity extends AppCompatActivity {
 
     /*---- UPDATE COUNTDOWN TEXT DISPLAY ----*/
     public void updateCountdownText(){
-        int hours = (int) (timeLeft / 1000) / 3600;
+
         int minutes = (int) ((timeLeft/1000)%3600)/60;
         int seconds = (int) (timeLeft/1000)%60;
 
-        String timeLeftDisplay;
-        if (hours > 0){
-            timeLeftDisplay = String.format(Locale.getDefault(),
-                    "%d:%02d:%02d", hours, minutes, seconds);
-        } else{
-            timeLeftDisplay = String.format(Locale.getDefault(),
-                    "%02d:%02d", minutes, seconds);
-        }
-
+        String timeLeftDisplay = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         taskTimerDisplay.setText(timeLeftDisplay);
 
     }

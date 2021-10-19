@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,13 +35,14 @@ public class MusicActivity extends AppCompatActivity {
     private EditText editText;
     private Button set_button;
 
+    // SOUNDS
+    private ImageView natureSounds;
+
 
 
 
 
 //    TRTYYYYY
-
-    private Button wow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +64,31 @@ public class MusicActivity extends AppCompatActivity {
         set_button = findViewById(R.id.continute_task_btn);
 
 
-        wow = findViewById(R.id.done_btn); /*-- TRY LANG SOUND --*/
 
+        Button wow = findViewById(R.id.done_btn); /*-- TRY LANG SOUND --*/
+
+//        natureSounds.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//              final MediaPlayer mediaPlayer = MediaPlayer.create(MusicActivity.this, R.raw.nature);
+//              mediaPlayer.start();
+//
+//            }
+//        });
+
+        //EDIT: MUSIC
+        natureSounds = (ImageView) findViewById(R.id.rain_button);
+        final MediaPlayer mediaPlayer1 = MediaPlayer.create(MusicActivity.this, R.raw.nature);
+        natureSounds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mediaPlayer1.isPlaying()){
+                    mediaPlayer1.pause();
+                } else {
+                    mediaPlayer1.start();
+                }
+            }
+        });
 
         //EDIT: TRY SET INPUT TIME AS TIMER *UMIYAK SO MUCH*
         set_button.setOnClickListener(new View.OnClickListener() {
