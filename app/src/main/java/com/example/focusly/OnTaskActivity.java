@@ -25,22 +25,13 @@ public class OnTaskActivity extends AppCompatActivity {
 
     private CountDownTimer taskCountdownTimer;
 
-    // Temporary default time na naka-set lol
     private long startTimeInput;
     private long timeLeft;
     private long endTime;
 
-    //EDIT: TRY SET INPUT TIME AS TIMER
+    //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
     private EditText editText;
     private Button set_button;
-
-
-
-
-
-//    TRTYYYYY
-
-    private Button wow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,21 +42,19 @@ public class OnTaskActivity extends AppCompatActivity {
 
         Intent i = getIntent();/*-- GET & DISPLAY TASK NAME OVERVIEW--*/
         String taskDisplay = i.getStringExtra("TASKDISPLAY");
-        ((TextView) findViewById(R.id.task_display)).setText("TASK: " + taskDisplay);
+        ((TextView) findViewById(R.id.task_display)).setText("WORKING ON: " + taskDisplay);
 
-        taskTimerDisplay = findViewById(R.id.text_view_countdown);
+        taskTimerDisplay = findViewById(R.id.music_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
         resetCountdownTimer = findViewById(R.id.button_reset);
 
-        //EDIT: TRY SET INPUT TIME AS TIMER
+        //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
         editText = findViewById(R.id.minute);
-        set_button = findViewById(R.id.continute_task_btn);
+        set_button = findViewById(R.id.set_time_btn);
 
 
-        wow = findViewById(R.id.done_btn); /*-- TRY LANG SOUND --*/
 
-
-        //EDIT: TRY SET INPUT TIME AS TIMER *UMIYAK SO MUCH*
+        //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
         set_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,10 +74,9 @@ public class OnTaskActivity extends AppCompatActivity {
             }
         });
 
-//EDIT: HANGGANG DITO LOL
 
 
-        // START BUTTON WHEN CLICKED NAGIGING PAUSE BUTTON (SUPER GULO PA NITO HUHU)
+        // START BUTTON
         startCountdownTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,11 +174,11 @@ public class OnTaskActivity extends AppCompatActivity {
             set_button.setVisibility(View.VISIBLE);
             startCountdownTimer.setText("START");
 
-            if (timeLeft < 1000){
-                startCountdownTimer.setVisibility(View.INVISIBLE);
-            } else {
-                startCountdownTimer.setVisibility(View.VISIBLE);
-            }
+//            if (timeLeft < 1000){
+//                startCountdownTimer.setVisibility(View.INVISIBLE);
+//            } else {
+//                startCountdownTimer.setVisibility(View.VISIBLE);
+//            }
 
             if (timeLeft < startTimeInput) {
                 resetCountdownTimer.setVisibility(View.VISIBLE);
@@ -198,14 +186,13 @@ public class OnTaskActivity extends AppCompatActivity {
                 resetCountdownTimer.setVisibility(View.INVISIBLE);
             }
             if (timeLeft == 0){
-//                Intent i = new Intent(this, DoneOnTaskActivity.class);
+
+//                Intent i = new Intent(OnTaskActivity.this, DoneOnTaskActivity.class);
 //                final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
 //
 //                mediaPlayer.start();
 //                startActivity(i);
 
-                Intent i = new Intent(OnTaskActivity.this, ContinueActivity.class);
-                startActivity(i);
 
                 if(isTimerRunning){
                     timeLeft = startTimeInput;
@@ -217,8 +204,7 @@ public class OnTaskActivity extends AppCompatActivity {
     }
 
 
-    /*---- KEEPS THE TIMER RUNNING ON BACKGROUND OR WHEN ORIENTATION CHANGES----*/
-
+    /*---- DEFAULT VIEW & KEEPS THE TIMER RUNNING ON BACKGROUND OR WHEN ORIENTATION CHANGES----*/
 
     @Override
     protected void onStop() {
@@ -246,7 +232,7 @@ public class OnTaskActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
-        startTimeInput = prefs.getLong("startTime", 600000);
+        startTimeInput = prefs.getLong("startTime", 900000);
         timeLeft = prefs.getLong("millisLeft", startTimeInput);
         isTimerRunning = prefs.getBoolean("timerRunning", false);
 
@@ -269,7 +255,7 @@ public class OnTaskActivity extends AppCompatActivity {
         }
     }
 
-    /*---- DONE BUTTON IF THE USER FINISHED TASK EARLY BEFORE TIME RUNS OUT----*/
+    /*---- DONE BUTTON | IF THE USER FINISHED TASK EARLY BEFORE TIME RUNS OUT----*/
     public void doneTaskEarly(View view){
 
         Intent i = new Intent(this, DoneOnTaskActivity.class);
@@ -284,7 +270,6 @@ public class OnTaskActivity extends AppCompatActivity {
             updateCountdownText();
         }
     }
-
 
 
 }

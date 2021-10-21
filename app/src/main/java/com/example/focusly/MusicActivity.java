@@ -26,25 +26,19 @@ public class MusicActivity extends AppCompatActivity {
 
     private CountDownTimer taskCountdownTimer;
 
-    // Temporary default time na naka-set lol
     private long startTimeInput;
     private long timeLeft;
     private long endTime;
 
-    //EDIT: TRY SET INPUT TIME AS TIMER
-    private EditText editText;
-    private Button set_button;
+    //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
+    private EditText editText1;
+    private Button set_button1;
 
     // SOUNDS
     private ImageView natureSounds;
     private ImageView pianoSounds;
     private ImageView localMusicFile;
 
-
-
-
-
-//    TRTYYYYY
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,21 +51,16 @@ public class MusicActivity extends AppCompatActivity {
         String taskDisplay = i.getStringExtra("TASKDISPLAY");
         ((TextView) findViewById(R.id.task_display)).setText("TASK: " + taskDisplay);
 
-        taskTimerDisplay = findViewById(R.id.text_view_countdown);
+        taskTimerDisplay = findViewById(R.id.music_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
         resetCountdownTimer = findViewById(R.id.button_reset);
 
-        //EDIT: TRY SET INPUT TIME AS TIMER
-        editText = findViewById(R.id.minute);
-        set_button = findViewById(R.id.continute_task_btn);
+        //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
+        editText1 = findViewById(R.id.minute);
+        set_button1 = findViewById(R.id.set_time_music);
 
 
-
-        Button wow = findViewById(R.id.done_btn); /*-- TRY LANG SOUND --*/
-
-
-
-        //EDIT: MUSIC
+        //EDIT: MUSIC BUTTONS
         natureSounds = (ImageView) findViewById(R.id.rain_button);
         pianoSounds = (ImageView) findViewById(R.id.piano_button);
         final MediaPlayer mediaPlayer1 = MediaPlayer.create(MusicActivity.this, R.raw.nature);
@@ -116,11 +105,11 @@ public class MusicActivity extends AppCompatActivity {
             }
         });
 
-        //EDIT: TRY SET INPUT TIME AS TIMER *UMIYAK SO MUCH*
-        set_button.setOnClickListener(new View.OnClickListener() {
+        //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
+        set_button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text = editText.getText().toString();
+                String text = editText1.getText().toString();
                 if (text.length() == 0) {
                     Toast.makeText(MusicActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
                     return;
@@ -131,15 +120,12 @@ public class MusicActivity extends AppCompatActivity {
                     return;
                 }
                 setTime(millisInput);
-                editText.setText("");
+                editText1.setText("");
 
             }
         });
 
-//EDIT: HANGGANG DITO LOL
-
-
-        // START BUTTON WHEN CLICKED NAGIGING PAUSE BUTTON (SUPER GULO PA NITO HUHU)
+        // START BUTTON
         startCountdownTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -235,21 +221,21 @@ public class MusicActivity extends AppCompatActivity {
     /*---- UPDATE COUNTDOWN BUTTONS | VISIBILITY & BUTTON TEXT ----*/
     public void updateTimeInterface(){
         if(isTimerRunning){
-            editText.setVisibility(View.INVISIBLE);
-            set_button.setVisibility(View.INVISIBLE);
+            editText1.setVisibility(View.INVISIBLE);
+            set_button1.setVisibility(View.INVISIBLE);
 
             resetCountdownTimer.setVisibility(View.INVISIBLE);
             startCountdownTimer.setText("PAUSE");
         } else {
-            editText.setVisibility(View.VISIBLE);
-            set_button.setVisibility(View.VISIBLE);
+            editText1.setVisibility(View.VISIBLE);
+            set_button1.setVisibility(View.VISIBLE);
             startCountdownTimer.setText("START");
 
-            if (timeLeft < 1000){
-                startCountdownTimer.setVisibility(View.INVISIBLE);
-            } else {
-                startCountdownTimer.setVisibility(View.VISIBLE);
-            }
+//            if (timeLeft < 1000){
+//                startCountdownTimer.setVisibility(View.INVISIBLE);
+//            } else {
+//                startCountdownTimer.setVisibility(View.VISIBLE);
+//            }
 
             if (timeLeft < startTimeInput) {
                 resetCountdownTimer.setVisibility(View.VISIBLE);

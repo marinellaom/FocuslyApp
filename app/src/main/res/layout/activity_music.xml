@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/text_view_countdown"
+        android:id="@+id/music_countdown"
         android:layout_width="279dp"
         android:layout_height="123dp"
         android:layout_marginTop="444dp"
@@ -69,7 +69,7 @@
         app:layout_constraintVertical_bias="0.894" />
 
     <Button
-        android:id="@+id/continute_task_btn"
+        android:id="@+id/set_time_music"
         android:layout_width="123dp"
         android:layout_height="46dp"
         android:background="#F6A9bD"

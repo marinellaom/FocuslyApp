@@ -33,7 +33,8 @@
         android:layout_marginTop="44dp"
         app:layout_constraintBottom_toTopOf="@+id/set_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069">
 
         <TextView
             android:id="@+id/AddTaskName"
@@ -42,6 +43,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:text="TASK NAME:"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,8 +62,8 @@
             android:ems="10"
             android:gravity="center"
             android:hint="Enter Task Name"
-            android:maxLength="20"
             android:inputType="textLongMessage|text"
+            android:maxLength="20"
             android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#837B86"
@@ -88,25 +90,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/taskname"
             app:layout_constraintVertical_bias="0.421" />
-
-        <EditText
-            android:id="@+id/minuteInput2"
-            android:layout_width="115dp"
-            android:layout_height="67dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Minutes"
-            android:inputType="number"
-            android:maxLength="4"
-            android:text=""
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.229"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/taskname"
-            app:layout_constraintVertical_bias="0.87" />
 
         <EditText
             android:id="@+id/secondsInput"
@@ -142,7 +125,26 @@
             app:layout_constraintHorizontal_bias="0.357"
             app:layout_constraintStart_toEndOf="@+id/minuteInput"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.9" />
+            app:layout_constraintVertical_bias="0.954" />
+
+        <EditText
+            android:id="@+id/minuteInput2"
+            android:layout_width="115dp"
+            android:layout_height="67dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Minutes"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.229"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/taskname"
+            app:layout_constraintVertical_bias="0.937" />
 
         <TextView
             android:id="@+id/textView3"
@@ -150,6 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="84dp"
             android:text="SET ON TASK TIMER"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FAF8F8"
             app:layout_constraintBottom_toTopOf="@+id/minuteInput"
@@ -166,12 +169,13 @@
             android:text="SET OFF TASK TIMER"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FAF8F8"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/minuteInput2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintHorizontal_bias="0.086"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/minuteInput"
-            app:layout_constraintVertical_bias="0.829" />
+            app:layout_constraintVertical_bias="0.764" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

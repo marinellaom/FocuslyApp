@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".ConfirmTaskActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/done_next"
         android:layout_width="161dp"
         android:layout_height="57dp"
         android:layout_marginStart="124dp"
-        android:layout_marginBottom="244dp"
+        android:layout_marginBottom="280dp"
         android:background="@drawable/rounded_corners"
         android:onClick="confirmInput"
         android:text="CONFIRM"
@@ -42,65 +43,24 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintVertical_bias="0.328" />
 
     <TextView
-        android:id="@+id/tasklabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TASK: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
-
-    <TextView
-        android:id="@+id/tasklabel3"
+        android:id="@+id/msg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ON TASK: "
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F6A9BD"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
-
-    <TextView
-        android:id="@+id/tasklabel4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OFF TASK: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
-
-    <TextView
-        android:id="@+id/task_name_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.336" />
 
     <TextView
         android:id="@+id/task_name_display2"
@@ -109,12 +69,13 @@
         android:text="min/sec"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F6A9BD"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.336" />
 
     <TextView
         android:id="@+id/task_name_display3"
@@ -123,11 +84,56 @@
         android:text="min/sec"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F6A9BD"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintHorizontal_bias="0.779"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/tasklabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OFF TASK: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/task_name_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.245" />
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TO DO: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.245" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

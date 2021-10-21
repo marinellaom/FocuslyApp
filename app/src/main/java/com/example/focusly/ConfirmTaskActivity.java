@@ -22,14 +22,14 @@ public class ConfirmTaskActivity extends AppCompatActivity {
         Intent i = getIntent();
 
         /*--- GET & DISPLAY USER INPUT OVERVIEW ---*/
-        String taskinput = i.getStringExtra("TASKINPUT");
-        String taskinput1 = i.getStringExtra("TASKINPUT1");
-        String taskinput2 = i.getStringExtra("TASKINPUT2");
-        String taskinput3 = i.getStringExtra("TASKINPUT3");
-        String taskinput4 = i.getStringExtra("TASKINPUT4");
-        ((TextView)findViewById(R.id.task_name_display)).setText(taskinput);
-        ((TextView)findViewById(R.id.task_name_display2)).setText(taskinput1 + " min " + taskinput3 + " sec");
-        ((TextView)findViewById(R.id.task_name_display3)).setText(taskinput2 + " min " + taskinput4 + " sec");
+        String taskName = i.getStringExtra("TASKNAME");
+        String minInput = i.getStringExtra("MININPUT");
+        String minInput2 = i.getStringExtra("MININPUT2");
+        String secInput = i.getStringExtra("SECINPUT");
+        String secInput2 = i.getStringExtra("SECINPUT2");
+        ((TextView)findViewById(R.id.task_name_display)).setText(taskName);
+        ((TextView)findViewById(R.id.task_name_display2)).setText(minInput + " min " + secInput + " sec");
+        ((TextView)findViewById(R.id.task_name_display3)).setText(minInput2 + " min " + secInput2 + " sec");
 
     }
 

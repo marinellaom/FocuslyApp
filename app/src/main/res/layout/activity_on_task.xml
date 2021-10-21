@@ -9,15 +9,15 @@
 
 
     <TextView
-        android:id="@+id/text_view_countdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="404dp"
+        android:id="@+id/music_countdown"
+        android:layout_width="278dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="372dp"
         android:text="00:00"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,11 +33,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_countdown"
-        app:layout_constraintVertical_bias="0.245" />
+        app:layout_constraintTop_toBottomOf="@+id/music_countdown"
+        app:layout_constraintVertical_bias="0.189" />
 
     <Button
-        android:id="@+id/continute_task_btn"
+        android:id="@+id/set_time_btn"
         android:layout_width="123dp"
         android:layout_height="46dp"
         android:background="#F6A9bD"
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.843"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.353" />
 
     <Button
         android:id="@+id/button_reset"
@@ -63,29 +63,31 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_countdown"
-        app:layout_constraintVertical_bias="0.504"
+        app:layout_constraintTop_toBottomOf="@+id/music_countdown"
+        app:layout_constraintVertical_bias="0.502"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/task_display"
-        android:layout_width="354dp"
-        android:layout_height="44dp"
+        android:layout_width="358dp"
+        android:layout_height="68dp"
         android:layout_marginBottom="10dp"
         android:gravity="left"
         android:hint="name of task"
-        android:text=""
         android:maxLength="30"
+        android:text=""
+        android:textSize="25dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FBFAFA"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.719"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.465" />
 
     <Button
         android:id="@+id/done_btn"
@@ -106,12 +108,12 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:text="HEALTH TRACKER"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#837b86"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,7 +121,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="76dp"
         android:text="Pulse Rate:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
@@ -132,7 +134,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="76dp"
         android:text="Skin Conductance:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
@@ -186,6 +188,6 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.175" />
 </androidx.constraintlayout.widget.ConstraintLayout>
