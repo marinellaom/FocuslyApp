@@ -23,13 +23,13 @@ public class ConfirmTaskActivity extends AppCompatActivity {
 
         /*--- GET & DISPLAY USER INPUT OVERVIEW ---*/
         String taskName = i.getStringExtra("TASKNAME");
-        String minInput = i.getStringExtra("MININPUT");
-        String minInput2 = i.getStringExtra("MININPUT2");
-        String secInput = i.getStringExtra("SECINPUT");
-        String secInput2 = i.getStringExtra("SECINPUT2");
+//        String minInput = i.getStringExtra("MININPUT");
+//        String minInput2 = i.getStringExtra("MININPUT2");
+//        String secInput = i.getStringExtra("SECINPUT");
+//        String secInput2 = i.getStringExtra("SECINPUT2");
         ((TextView)findViewById(R.id.task_name_display)).setText(taskName);
-        ((TextView)findViewById(R.id.task_name_display2)).setText(minInput + " min " + secInput + " sec");
-        ((TextView)findViewById(R.id.task_name_display3)).setText(minInput2 + " min " + secInput2 + " sec");
+//        ((TextView)findViewById(R.id.task_name_display2)).setText(minInput + " min " + secInput + " sec");
+//        ((TextView)findViewById(R.id.task_name_display3)).setText(minInput2 + " min " + secInput2 + " sec");
 
     }
 

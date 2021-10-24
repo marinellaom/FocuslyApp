@@ -89,7 +89,6 @@ public class MusicActivity extends AppCompatActivity {
                 } else {
                     mediaPlayer2.start();
 
-
                 }
             }
         });
