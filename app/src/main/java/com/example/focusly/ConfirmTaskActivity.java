@@ -5,11 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class ConfirmTaskActivity extends AppCompatActivity {
@@ -21,15 +17,17 @@ public class ConfirmTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_confirm_task);
         Intent i = getIntent();
 
+
         /*--- GET & DISPLAY USER INPUT OVERVIEW ---*/
         String taskName = i.getStringExtra("TASKNAME");
-//        String minInput = i.getStringExtra("MININPUT");
-//        String minInput2 = i.getStringExtra("MININPUT2");
-//        String secInput = i.getStringExtra("SECINPUT");
-//        String secInput2 = i.getStringExtra("SECINPUT2");
+
+        String onTimeDisplay = i.getStringExtra("ONTIME");
+        String offTimeDisplay = i.getStringExtra("OFFTIME");
+
         ((TextView)findViewById(R.id.task_name_display)).setText(taskName);
-//        ((TextView)findViewById(R.id.task_name_display2)).setText(minInput + " min " + secInput + " sec");
-//        ((TextView)findViewById(R.id.task_name_display3)).setText(minInput2 + " min " + secInput2 + " sec");
+        ((TextView)findViewById(R.id.on_time_display)).setText(String.format("%s minute ", onTimeDisplay));
+        ((TextView)findViewById(R.id.off_time_display)).setText(String.format("%s minute ", offTimeDisplay));
+
 
     }
 
