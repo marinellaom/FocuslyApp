@@ -9,9 +9,9 @@
 
     <Button
         android:id="@+id/done_next"
-        android:layout_width="161dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="124dp"
+        android:layout_width="179dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="116dp"
         android:layout_marginBottom="280dp"
         android:background="@drawable/rounded_corners"
         android:onClick="confirmInput"
@@ -48,10 +48,84 @@
         app:layout_constraintVertical_bias="0.328" />
 
     <TextView
+        android:id="@+id/tasklabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OFF TIME: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467" />
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TO DO: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <TextView
+        android:id="@+id/task_name_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <TextView
+        android:id="@+id/msg6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Ano maganda text ilagay here)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.218" />
+
+    <TextView
+        android:id="@+id/msg7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="( HELP )"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <TextView
         android:id="@+id/msg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ON TASK: "
+        android:text="WORK TIME: "
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
@@ -60,7 +134,7 @@
         app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336" />
+        app:layout_constraintVertical_bias="0.403" />
 
     <TextView
         android:id="@+id/on_time_display"
@@ -75,7 +149,7 @@
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336" />
+        app:layout_constraintVertical_bias="0.403" />
 
     <TextView
         android:id="@+id/off_time_display"
@@ -90,50 +164,6 @@
         app:layout_constraintHorizontal_bias="0.779"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
-
-    <TextView
-        android:id="@+id/tasklabel4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OFF TASK: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
-
-    <TextView
-        android:id="@+id/task_name_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.829"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
-
-    <TextView
-        android:id="@+id/msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TO DO: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
+        app:layout_constraintVertical_bias="0.467" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

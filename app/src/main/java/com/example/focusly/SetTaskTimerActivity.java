@@ -57,7 +57,6 @@ public class SetTaskTimerActivity extends AppCompatActivity{
                 i.putExtra("ONTIME", onTimeDisplay);
                 i.putExtra("OFFTIME", offTimeDisplay);
 
-
                 /*--- VALIDATE USER INPUT IF EMPTY---*/
                 if (TextUtils.isEmpty(taskName)){
                     Toast.makeText(SetTaskTimerActivity.this, "Task name cannot be empty!", Toast.LENGTH_SHORT).show();

@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,9 +41,11 @@ public class OnTaskActivity extends AppCompatActivity {
 
         SetTaskTimerActivity set = new SetTaskTimerActivity();
 
+        /*--- GET & DISPLAY TASK NAME ---*/
         Intent i = getIntent();/*-- GET & DISPLAY TASK NAME OVERVIEW--*/
         String taskDisplay = i.getStringExtra("TASKDISPLAY");
         ((TextView) findViewById(R.id.task_display)).setText("WORKING ON: " + taskDisplay);
+
 
         taskTimerDisplay = findViewById(R.id.music_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
@@ -185,27 +188,29 @@ public class OnTaskActivity extends AppCompatActivity {
             } else {
                 resetCountdownTimer.setVisibility(View.INVISIBLE);
             }
-            if (timeLeft == 0){
 
-//                Intent i = new Intent(OnTaskActivity.this, DoneOnTaskActivity.class);
-//                final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
-//
-//                mediaPlayer.start();
-//                startActivity(i);
+            if (timeLeft < 1000){
+
+                /*----DEFAULT TIME----*/
+                timeLeft = 900000;
+                updateCountdownText();
+
+                /*---- PROCEEDS TO NEXT PAGE IF TIMER IS DONE----*/
+                Intent in = new Intent(OnTaskActivity.this, ContinueActivity.class);
+                startActivity(in);
 
 
-                if(isTimerRunning){
-                    timeLeft = startTimeInput;
-                    taskCountdownTimer.cancel();
-                    updateCountdownText();
-                }
+//                if(isTimerRunning){
+//                    timeLeft = startTimeInput;
+//                    taskCountdownTimer.cancel();
+//                    updateCountdownText();
+//                }
             }
         }
     }
 
 
     /*---- DEFAULT VIEW & KEEPS THE TIMER RUNNING ON BACKGROUND OR WHEN ORIENTATION CHANGES----*/
-
     @Override
     protected void onStop() {
         super.onStop();

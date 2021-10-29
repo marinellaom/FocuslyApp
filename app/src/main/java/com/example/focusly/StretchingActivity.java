@@ -16,7 +16,19 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class MusicActivity extends AppCompatActivity {
+
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
+
+public class StretchingActivity extends AppCompatActivity {
+
+    SliderView sliderView;
+    int[] images = {R.drawable.overhead_reach,
+            R.drawable.arm_stretch,
+            R.drawable.triceps_stretches};
+
 
     private TextView taskTimerDisplay;
     private Button startCountdownTimer;
@@ -34,16 +46,11 @@ public class MusicActivity extends AppCompatActivity {
     private EditText editText1;
     private Button set_button1;
 
-    // SOUNDS
-    private ImageView natureSounds;
-    private ImageView pianoSounds;
-    private ImageView localMusicFile;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music);
+        setContentView(R.layout.activity_stretching);
 
         taskTimerDisplay = findViewById(R.id.music_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
@@ -54,49 +61,16 @@ public class MusicActivity extends AppCompatActivity {
         set_button1 = findViewById(R.id.set_time_music);
 
 
-        //EDIT: MUSIC BUTTONS
-        natureSounds = (ImageView) findViewById(R.id.rain_button);
-        pianoSounds = (ImageView) findViewById(R.id.piano_button);
-        final MediaPlayer mediaPlayer1 = MediaPlayer.create(MusicActivity.this, R.raw.nature);
-        final MediaPlayer mediaPlayer2 = MediaPlayer.create(MusicActivity.this, R.raw.piano);
+        //EDIT: IMAGE/GIF SLIDER TRYYYY
+        sliderView = findViewById(R.id.gif_slider);
 
-        natureSounds.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mediaPlayer1.isPlaying()){
-                    mediaPlayer1.pause();
+        SliderAdapter sliderAdapter = new SliderAdapter(images);
 
-                } else {
-                    mediaPlayer1.start();
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        sliderView.startAutoCycle();
 
-
-                }
-            }
-        });
-
-        pianoSounds.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mediaPlayer2.isPlaying()){
-                    mediaPlayer2.pause();
-
-                } else {
-                    mediaPlayer2.start();
-
-                }
-            }
-        });
-
-
-        localMusicFile = (ImageView) findViewById(R.id.localmusic_button);
-        localMusicFile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(Intent.ACTION_GET_CONTENT);
-                in.setType("*/*");
-                startActivityForResult(in, 1);
-            }
-        });
 
         //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
         set_button1.setOnClickListener(new View.OnClickListener() {
@@ -104,12 +78,12 @@ public class MusicActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String text = editText1.getText().toString();
                 if (text.length() == 0) {
-                    Toast.makeText(MusicActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StretchingActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 long millisInput = Long.parseLong(text) * 60000;
                 if (millisInput  == 0){
-                    Toast.makeText(MusicActivity.this, "Positive Number Only!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StretchingActivity.this, "Positive Number Only!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 setTime(millisInput);
@@ -244,7 +218,7 @@ public class MusicActivity extends AppCompatActivity {
 
                 /*---- PROCEEDS TO NEXT PAGE IF TIMER IS DONE ----*/
                 /*---- TEMPORARY: IBA PA DAPAT PAGE NA PUPUNTAHAN NETO ----*/
-                Intent in = new Intent(MusicActivity.this, ContinueActivity.class);
+                Intent in = new Intent(StretchingActivity.this, ContinueActivity.class);
                 startActivity(in);
 
 

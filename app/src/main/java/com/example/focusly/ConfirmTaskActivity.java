@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -15,18 +16,17 @@ public class ConfirmTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_task);
-        Intent i = getIntent();
-
 
         /*--- GET & DISPLAY USER INPUT OVERVIEW ---*/
-        String taskName = i.getStringExtra("TASKNAME");
+        Intent i = getIntent();
 
+        String taskName = i.getStringExtra("TASKNAME");
         String onTimeDisplay = i.getStringExtra("ONTIME");
         String offTimeDisplay = i.getStringExtra("OFFTIME");
 
         ((TextView)findViewById(R.id.task_name_display)).setText(taskName);
-        ((TextView)findViewById(R.id.on_time_display)).setText(String.format("%s minute ", onTimeDisplay));
-        ((TextView)findViewById(R.id.off_time_display)).setText(String.format("%s minute ", offTimeDisplay));
+        ((TextView)findViewById(R.id.on_time_display)).setText(String.format("%s minutes ", onTimeDisplay));
+        ((TextView)findViewById(R.id.off_time_display)).setText(String.format("%s minutes ", offTimeDisplay));
 
 
     }
