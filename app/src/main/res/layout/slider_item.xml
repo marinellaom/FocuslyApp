@@ -8,6 +8,6 @@
         android:layout_height="match_parent"
         android:id="@+id/image_view"
         android:scaleType="centerCrop"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

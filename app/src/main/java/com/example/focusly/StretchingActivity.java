@@ -24,12 +24,6 @@ import com.smarteist.autoimageslider.SliderView;
 
 public class StretchingActivity extends AppCompatActivity {
 
-    SliderView sliderView;
-    int[] images = {R.drawable.overhead_reach,
-            R.drawable.arm_stretch,
-            R.drawable.triceps_stretches};
-
-
     private TextView taskTimerDisplay;
     private Button startCountdownTimer;
     private Button resetCountdownTimer;
@@ -45,6 +39,20 @@ public class StretchingActivity extends AppCompatActivity {
     //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
     private EditText editText1;
     private Button set_button1;
+
+    //GIF Slider
+    SliderView sliderView;
+    int[] images = {R.drawable.overhead_reach,
+            R.drawable.arm_stretch,
+            R.drawable.triceps_stretches,
+            R.drawable.shoulder,
+            R.drawable.forward,
+            R.drawable.torso,
+            R.drawable.hip,
+            R.drawable.hamstrings,
+            R.drawable.shrug,
+            R.drawable.neck,
+            R.drawable.upper};
 
 
     @Override
