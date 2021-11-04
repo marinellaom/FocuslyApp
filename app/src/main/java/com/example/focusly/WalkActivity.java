@@ -14,6 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
 import java.util.Locale;
 
 public class WalkActivity extends AppCompatActivity {
@@ -34,6 +38,24 @@ public class WalkActivity extends AppCompatActivity {
     private EditText editText1;
     private Button set_button1;
 
+    //Image Slider
+    SliderView sliderView;
+    int[] images = {R.drawable.twalk1,
+            R.drawable.twalk2,
+            R.drawable.twalk3,
+            R.drawable.twalk4,
+            R.drawable.twalk5,
+            R.drawable.mwalk1,
+            R.drawable.mwalk2,
+            R.drawable.mwalk3,
+            R.drawable.mwalk4,
+            R.drawable.mwalk5,
+            R.drawable.bwalk1,
+            R.drawable.bwalk2,
+            R.drawable.bwalk3,
+            R.drawable.bwalk4,
+            R.drawable.bwalk5,};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +70,15 @@ public class WalkActivity extends AppCompatActivity {
         editText1 = findViewById(R.id.minute);
         set_button1 = findViewById(R.id.set_time_music);
 
+        //EDIT: IMAGE/GIF SLIDER TRYYYY
+        sliderView = findViewById(R.id.walk_slider);
+
+        SliderAdapter sliderAdapter = new SliderAdapter(images);
+
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        sliderView.startAutoCycle();
 
 
         //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)

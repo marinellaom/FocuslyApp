@@ -14,6 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
 import java.util.Locale;
 
 public class EatActivity extends AppCompatActivity {
@@ -34,7 +38,23 @@ public class EatActivity extends AppCompatActivity {
     private EditText editText1;
     private Button set_button1;
 
-
+    //Image Slider
+    SliderView sliderView;
+    int[] images = {R.drawable.teat1,
+            R.drawable.teat2,
+            R.drawable.teat3,
+            R.drawable.teat4,
+            R.drawable.teat5,
+            R.drawable.meat1,
+            R.drawable.meat2,
+            R.drawable.meat3,
+            R.drawable.meat4,
+            R.drawable.meat,
+            R.drawable.beat1,
+            R.drawable.beat2,
+            R.drawable.beat3,
+            R.drawable.beat4,
+            R.drawable.beat5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +69,15 @@ public class EatActivity extends AppCompatActivity {
         editText1 = findViewById(R.id.minute);
         set_button1 = findViewById(R.id.set_time_music);
 
+        //EDIT: IMAGE/GIF SLIDER TRYYYY
+        sliderView = findViewById(R.id.eat_slider);
+
+        SliderAdapter sliderAdapter = new SliderAdapter(images);
+
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        sliderView.startAutoCycle();
 
 
         //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)

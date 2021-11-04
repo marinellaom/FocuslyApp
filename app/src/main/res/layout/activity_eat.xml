@@ -19,18 +19,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_health_tracker" />
 
+
     <TextView
         android:id="@+id/music_countdown"
-        android:layout_width="279dp"
-        android:layout_height="123dp"
-        android:layout_marginTop="444dp"
+        android:layout_width="152dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="576dp"
         android:text="00:00"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/done_btn"
@@ -42,10 +43,24 @@
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toEndOf="@+id/button_start_pause"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896" />
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/button_start_pause"
+        android:layout_width="114dp"
+        android:layout_height="52dp"
+        android:background="@drawable/rounded_corners"
+        android:text="START"
+        android:textColor="#FFFEBB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
 
     <Button
         android:id="@+id/button_reset"
@@ -59,44 +74,47 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_start_pause"
-        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894"
+        app:layout_constraintVertical_bias="0.974"
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/button_start_pause"
-        android:layout_width="114dp"
-        android:layout_height="52dp"
-        android:background="@drawable/rounded_corners"
-        android:text="START"
-        android:textColor="#FFFEBB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894" />
-
-    <Button
         android:id="@+id/set_time_music"
-        android:layout_width="123dp"
-        android:layout_height="46dp"
+        android:layout_width="70dp"
+        android:layout_height="52dp"
         android:background="#F6A9bD"
         android:text="SET"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintVertical_bias="0.749" />
+
+    <EditText
+        android:id="@+id/minute"
+        android:layout_width="142dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="148dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Minutes"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.617" />
 
     <TextView
         android:id="@+id/task_display"
-        android:layout_width="350dp"
-        android:layout_height="36dp"
+        android:layout_width="259dp"
+        android:layout_height="33dp"
         android:layout_marginBottom="10dp"
         android:gravity="left"
         android:maxLength="30"
@@ -105,10 +123,10 @@
         android:textColor="#FBFAFA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.267" />
 
     <TextView
         android:id="@+id/textView6"
@@ -180,20 +198,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <EditText
-        android:id="@+id/minute"
-        android:layout_width="189dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="148dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Minutes"
-        android:inputType="textPersonName"
-        android:text=""
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/eat_slider"
+        android:layout_width="394dp"
+        android:layout_height="222dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/task_display"
+        app:layout_constraintVertical_bias="0.092"
+        app:sliderAnimationDuration="1000"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="1000"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="#5a5a5a"
+        app:sliderScrollTimeInSec="20"
+        app:sliderStartAutoCycle="true"
+        tools:ignore="MissingConstraints">
+
+    </com.smarteist.autoimageslider.SliderView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
