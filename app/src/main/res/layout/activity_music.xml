@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D8CDDD"
+    android:background="#f6e7ec"
     tools:context=".OnTaskActivity">
+
 
     <ImageView
         android:id="@+id/line"
         android:layout_width="353dp"
         android:layout_height="3dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="184dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_health_tracker" />
@@ -22,14 +23,13 @@
         android:id="@+id/music_countdown"
         android:layout_width="279dp"
         android:layout_height="123dp"
-        android:layout_marginTop="444dp"
+        android:layout_marginTop="452dp"
         android:text="00:00"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/done_btn"
@@ -80,61 +80,61 @@
 
     <Button
         android:id="@+id/set_time_music"
-        android:layout_width="123dp"
-        android:layout_height="46dp"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
         android:background="#F6A9bD"
         android:text="SET"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintVertical_bias="0.584" />
 
     <ImageView
         android:id="@+id/rain_button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
         android:background="#F6A9bD"
         android:text="SET"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522"
+        app:layout_constraintVertical_bias="0.433"
         app:srcCompat="@drawable/rain" />
 
     <ImageView
         android:id="@+id/piano_button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
         android:background="#F6A9bD"
         android:text="SET"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522"
+        app:layout_constraintVertical_bias="0.433"
         app:srcCompat="@drawable/piano" />
 
     <ImageView
         android:id="@+id/localmusic_button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
         android:background="#F6A9bD"
         android:text="SET"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522"
+        app:layout_constraintVertical_bias="0.433"
         app:srcCompat="@drawable/ic_music"
         tools:ignore="VectorDrawableCompat" />
 
@@ -147,10 +147,11 @@
         android:maxLength="30"
         android:text="OFF TASK ACTIVITY: PLAY MUSIC"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FBFAFA"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
@@ -172,12 +173,12 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="76dp"
         android:text="Pulse Rate:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintHorizontal_bias="0.074"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -185,20 +186,20 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="76dp"
         android:text="Skin Conductance:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/skin_conductance"
-        android:layout_width="146dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="168dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="112dp"
         android:background="@color/white"
         android:ems="10"
         android:gravity="center"
@@ -206,16 +207,16 @@
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toEndOf="@+id/pulse_rate"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/pulse_rate"
-        android:layout_width="146dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="168dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="112dp"
         android:background="@color/white"
         android:ems="10"
         android:gravity="center"
@@ -223,13 +224,12 @@
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/minute"
-        android:layout_width="189dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
         android:layout_marginTop="148dp"
         android:background="@color/white"
         android:ems="10"
@@ -238,7 +238,9 @@
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/set_time_music"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.352" />
 </androidx.constraintlayout.widget.ConstraintLayout>

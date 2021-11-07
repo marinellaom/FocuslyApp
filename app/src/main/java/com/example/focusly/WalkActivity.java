@@ -62,13 +62,13 @@ public class WalkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walk);
 
-        taskTimerDisplay = findViewById(R.id.music_countdown);
+        taskTimerDisplay = findViewById(R.id.walk_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
         resetCountdownTimer = findViewById(R.id.button_reset);
 
         //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
         editText1 = findViewById(R.id.minute);
-        set_button1 = findViewById(R.id.set_time_music);
+        set_button1 = findViewById(R.id.set_time_walk);
 
         //EDIT: IMAGE/GIF SLIDER TRYYYY
         sliderView = findViewById(R.id.walk_slider);
@@ -203,8 +203,8 @@ public class WalkActivity extends AppCompatActivity {
             resetCountdownTimer.setVisibility(View.INVISIBLE);
             startCountdownTimer.setText("PAUSE");
         } else {
-            editText1.setVisibility(View.VISIBLE);
-            set_button1.setVisibility(View.VISIBLE);
+//            editText1.setVisibility(View.VISIBLE);
+//            set_button1.setVisibility(View.VISIBLE);
             startCountdownTimer.setText("START");
 
 //            if (timeLeft < 1000){

@@ -220,8 +220,8 @@ public class MusicActivity extends AppCompatActivity {
             resetCountdownTimer.setVisibility(View.INVISIBLE);
             startCountdownTimer.setText("PAUSE");
         } else {
-            editText1.setVisibility(View.VISIBLE);
-            set_button1.setVisibility(View.VISIBLE);
+//            editText1.setVisibility(View.VISIBLE);
+//            set_button1.setVisibility(View.VISIBLE);
             startCountdownTimer.setText("START");
 
 //            if (timeLeft < 1000){

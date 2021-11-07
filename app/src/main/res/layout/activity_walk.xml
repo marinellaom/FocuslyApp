@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D8CDDD"
+    android:background="#F6E7EC"
     tools:context=".OnTaskActivity">
 
 
@@ -12,7 +12,7 @@
         android:id="@+id/line"
         android:layout_width="353dp"
         android:layout_height="3dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,15 +20,16 @@
         app:srcCompat="@drawable/bg_health_tracker" />
 
     <TextView
-        android:id="@+id/music_countdown"
-        android:layout_width="214dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="564dp"
+        android:id="@+id/walk_countdown"
+        android:layout_width="205dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="500dp"
         android:text="00:00"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#FFFFFF"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#B2ADBC"
+        android:textSize="80dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,26 +43,26 @@
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/button_start_pause"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.929" />
 
     <Button
         android:id="@+id/button_reset"
         android:layout_width="104dp"
         android:layout_height="54dp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/rounded_corners"
         android:text="RESET"
         android:textColor="#FFFEBB"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_start_pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintVertical_bias="0.928"
         tools:visibility="visible" />
 
     <Button
@@ -73,30 +74,30 @@
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
+        app:layout_constraintVertical_bias="0.926" />
 
     <Button
-        android:id="@+id/set_time_music"
-        android:layout_width="122dp"
-        android:layout_height="45dp"
+        android:id="@+id/set_time_walk"
+        android:layout_width="116dp"
+        android:layout_height="40dp"
         android:background="#F6A9bD"
         android:text="SET"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toEndOf="@+id/minute"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
+        app:layout_constraintVertical_bias="0.665" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="24dp"
         android:text="HEALTH TRACKER"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#837b86"
@@ -109,64 +110,66 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Pulse Rate:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:text="Skin Conductance:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/skin_conductance"
-        android:layout_width="146dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="168dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="96dp"
         android:background="@color/white"
         android:ems="10"
         android:gravity="center"
         android:hint="GSR"
         android:inputType="textPersonName"
         android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toEndOf="@+id/pulse_rate"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/pulse_rate"
-        android:layout_width="146dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="168dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
         android:background="@color/white"
         android:ems="10"
         android:gravity="center"
         android:hint="Pulse Rate"
         android:inputType="textPersonName"
         android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/minute"
-        android:layout_width="189dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="152dp"
+        android:layout_height="43dp"
         android:layout_marginTop="148dp"
         android:background="@color/white"
         android:ems="10"
@@ -175,9 +178,11 @@
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.495" />
 
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/walk_slider"
@@ -185,10 +190,10 @@
         android:layout_height="212dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_display"
-        app:layout_constraintVertical_bias="0.038"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
         app:sliderAnimationDuration="1000"
         app:sliderAutoCycleDirection="back_and_forth"
         app:sliderAutoCycleEnabled="true"
@@ -209,13 +214,14 @@
         android:id="@+id/task_display"
         android:layout_width="280dp"
         android:layout_height="35dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="172dp"
         android:gravity="left"
         android:maxLength="30"
         android:text="OFF TASK ACTIVITY: WALK"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FBFAFA"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/line" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
