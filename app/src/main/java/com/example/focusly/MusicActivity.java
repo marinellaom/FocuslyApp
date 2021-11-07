@@ -58,7 +58,7 @@ public class MusicActivity extends AppCompatActivity {
         natureSounds = (ImageView) findViewById(R.id.rain_button);
         pianoSounds = (ImageView) findViewById(R.id.piano_button);
         final MediaPlayer mediaPlayer1 = MediaPlayer.create(MusicActivity.this, R.raw.nature);
-        final MediaPlayer mediaPlayer2 = MediaPlayer.create(MusicActivity.this, R.raw.piano);
+        final MediaPlayer mediaPlayer2 = MediaPlayer.create(MusicActivity.this, R.raw.instrument);
 
         natureSounds.setOnClickListener(new View.OnClickListener() {
             @Override
