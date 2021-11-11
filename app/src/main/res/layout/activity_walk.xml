@@ -8,6 +8,27 @@
     tools:context=".OnTaskActivity">
 
 
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_width="74dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/back_button"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:text="RESET"
+        android:textColor="#F6A9bD"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:visibility="visible" />
+
     <ImageView
         android:id="@+id/line"
         android:layout_width="353dp"
@@ -23,7 +44,7 @@
         android:id="@+id/walk_countdown"
         android:layout_width="205dp"
         android:layout_height="98dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="488dp"
         android:text="00:00"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#B2ADBC"
@@ -34,50 +55,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button_start_pause"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:background="@drawable/rounded_corners"
+        android:text="START"
+        android:textColor="#FFFEBB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.299"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
+
+    <Button
         android:id="@+id/done_btn"
         android:layout_width="108dp"
-        android:layout_height="54dp"
+        android:layout_height="42dp"
         android:background="@drawable/rounded_corners"
         android:onClick="doneTaskEarly"
         android:text="DONE"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toEndOf="@+id/button_start_pause"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929" />
-
-    <Button
-        android:id="@+id/button_reset"
-        android:layout_width="104dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_corners"
-        android:text="RESET"
-        android:textColor="#FFFEBB"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/button_start_pause"
-        android:layout_width="114dp"
-        android:layout_height="52dp"
-        android:background="@drawable/rounded_corners"
-        android:text="START"
-        android:textColor="#FFFEBB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.88" />
 
     <Button
         android:id="@+id/set_time_walk"

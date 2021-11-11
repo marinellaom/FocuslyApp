@@ -226,7 +226,7 @@ public class StretchingActivity extends AppCompatActivity {
 
                 /*---- PROCEEDS TO NEXT PAGE IF TIMER IS DONE ----*/
                 /*---- TEMPORARY: IBA PA DAPAT PAGE NA PUPUNTAHAN NETO ----*/
-                Intent in = new Intent(StretchingActivity.this, ContinueActivity.class);
+                Intent in = new Intent(StretchingActivity.this, OffContinueActivity.class);
                 startActivity(in);
 
 
@@ -295,7 +295,7 @@ public class StretchingActivity extends AppCompatActivity {
     /*---- DONE BUTTON IF THE USER FINISHED TASK EARLY BEFORE TIME RUNS OUT----*/
     public void doneTaskEarly(View view){
 
-        Intent i = new Intent(this, DoneOnTaskActivity.class);
+        Intent i = new Intent(this, OffContinueActivity.class);
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
 
         mediaPlayer.start();

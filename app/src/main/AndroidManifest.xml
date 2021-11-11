@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Focusly">
         <activity
+            android:name=".OverviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OffContinueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DoneOffTaskActivity"
+            android:exported="true" />
+        <activity
             android:name=".EatActivity"
             android:exported="true" />
         <activity
