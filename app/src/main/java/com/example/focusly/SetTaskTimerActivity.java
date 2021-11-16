@@ -17,6 +17,10 @@ import android.text.TextUtils;
 
 public class SetTaskTimerActivity extends AppCompatActivity{
 
+    EditText taskName;
+    Spinner OnSpinner;
+    Spinner OffSpinner;
+    Button setButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +28,10 @@ public class SetTaskTimerActivity extends AppCompatActivity{
         setContentView(R.layout.activity_set_task_timer);
         setTitle("On Task");
 
-        final Spinner OnSpinner = findViewById(R.id.on_spinner);
-        final Spinner OffSpinner = findViewById(R.id.off_spinner);
-        Button set_button = findViewById(R.id.set_button);
+        OnSpinner = (Spinner) findViewById(R.id.on_spinner);
+        OffSpinner = (Spinner) findViewById(R.id.off_spinner);
+        setButton = (Button) findViewById(R.id.set_button);
+        taskName = (EditText) findViewById(R.id.taskname);
 
         //DEFAULT TIME LIST
         Integer[] ontime = new Integer[]{15, 20, 25, 30, 35, 40, 45};
@@ -40,35 +45,29 @@ public class SetTaskTimerActivity extends AppCompatActivity{
         OffSpinner.setAdapter(OffAdapter);
 
 
-        set_button.setOnClickListener(new View.OnClickListener() {
+        setButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 /*--- GET AND DISPLAY INFO TO OTHER ACTIVITY (PAGE) ---*/
+                GlobalVariable.taskname = taskName.getText().toString();
+                GlobalVariable.OnTimer = OnSpinner.getSelectedItem().toString();
+                GlobalVariable.OffTimer = OffSpinner.getSelectedItem().toString();
+
                 Intent i = new Intent(SetTaskTimerActivity.this, ConfirmTaskActivity.class);
 
-                String onTimeDisplay = OnSpinner.getSelectedItem().toString();
-                String offTimeDisplay = OffSpinner.getSelectedItem().toString();
-                String taskName= ((EditText)findViewById(R.id.taskname)).getText().toString();
-
-                ((EditText)findViewById(R.id.taskname)).setText(taskName);
-
-                i.putExtra("TASKNAME", taskName);
-                i.putExtra("ONTIME", onTimeDisplay);
-                i.putExtra("OFFTIME", offTimeDisplay);
 
                 /*--- VALIDATE USER INPUT IF EMPTY---*/
-                if (TextUtils.isEmpty(taskName)){
+                if (TextUtils.isEmpty(GlobalVariable.taskname)){
                     Toast.makeText(SetTaskTimerActivity.this, "Task name cannot be empty!", Toast.LENGTH_SHORT).show();
                     return;
-                } else if ((taskName).trim().length()==0){
+                } else if ((GlobalVariable.taskname).trim().length()==0){
                     Toast.makeText(SetTaskTimerActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 startActivity(i);
             }
         });
-
     }
 
 
@@ -76,29 +75,5 @@ public class SetTaskTimerActivity extends AppCompatActivity{
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
-
-//    // SET BUTTON
-//    public void setTaskTimer(View set){
-//
-//        Intent i = new Intent(this, ConfirmTaskActivity.class);
-//
-//        String taskName= ((EditText)findViewById(R.id.taskname)).getText().toString();
-//
-//        ((EditText)findViewById(R.id.taskname)).setText(taskName);
-//
-//        i.putExtra("TASKNAME", taskName);
-//
-//
-//        /*--- VALIDATE USER INPUT IF EMPTY---*/
-//        // INPUT VALIDATION - MIN / MAX / EMPTY / ZERO
-//        if (TextUtils.isEmpty(taskName)){
-//            Toast.makeText(this, "Task name cannot be empty!", Toast.LENGTH_SHORT).show();
-//            return;
-//            } else if ((taskName).trim().length()==0){
-//                Toast.makeText(this, "Invalid Input!", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//        startActivity(i);
-//    }
 
 }

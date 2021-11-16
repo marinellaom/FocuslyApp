@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,27 +32,24 @@ public class OnTaskActivity extends AppCompatActivity {
     private EditText editText;
     private Button set_button;
 
+    TextView taskNameDisplay;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_task);
 
-        SetTaskTimerActivity set = new SetTaskTimerActivity();
+        taskNameDisplay = (TextView) findViewById(R.id.task_display);
+        taskNameDisplay.setText("WORKING ON: " + GlobalVariable.taskname);
 
-        /*--- GET & DISPLAY TASK NAME ---*/
-        Intent i = getIntent();/*-- GET & DISPLAY TASK NAME OVERVIEW--*/
-        String taskDisplay = i.getStringExtra("TASKDISPLAY");
-        ((TextView) findViewById(R.id.task_display)).setText("WORKING ON: " + taskDisplay);
-
-
-        taskTimerDisplay = findViewById(R.id.music_countdown);
+        taskTimerDisplay = findViewById(R.id.on_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
         resetCountdownTimer = findViewById(R.id.button_reset);
+
 
         //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
         editText = findViewById(R.id.minute);
         set_button = findViewById(R.id.set_time_btn);
-
 
 
         //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
@@ -264,9 +259,9 @@ public class OnTaskActivity extends AppCompatActivity {
     public void doneTaskEarly(View view){
 
         Intent i = new Intent(this, DoneOnTaskActivity.class);
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
+//        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
 
-        mediaPlayer.start();
+//        mediaPlayer.start();
         startActivity(i);
 
         if(isTimerRunning){

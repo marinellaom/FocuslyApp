@@ -19,18 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_health_tracker" />
 
-    <TextView
-        android:id="@+id/music_countdown"
-        android:layout_width="279dp"
-        android:layout_height="123dp"
-        android:layout_marginTop="444dp"
-        android:text="00:00"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/done_btn"
         android:layout_width="108dp"
@@ -246,4 +234,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.352" />
+
+    <TextView
+        android:id="@+id/music_countdown"
+        android:layout_width="279dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="444dp"
+        android:text="00:00"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

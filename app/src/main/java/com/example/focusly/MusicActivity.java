@@ -45,7 +45,7 @@ public class MusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        taskTimerDisplay = findViewById(R.id.music_countdown);
+        taskTimerDisplay = findViewById(R.id.on_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
         resetCountdownTimer = findViewById(R.id.button_reset);
 
