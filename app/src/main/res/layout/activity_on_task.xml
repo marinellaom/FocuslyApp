@@ -12,7 +12,7 @@
         android:id="@+id/on_countdown"
         android:layout_width="278dp"
         android:layout_height="124dp"
-        android:layout_marginTop="372dp"
+        android:layout_marginTop="356dp"
         android:text="00:00"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#FFFFFF"
@@ -36,19 +36,6 @@
         app:layout_constraintTop_toBottomOf="@+id/on_countdown"
         app:layout_constraintVertical_bias="0.156" />
 
-    <Button
-        android:id="@+id/set_time_btn"
-        android:layout_width="123dp"
-        android:layout_height="46dp"
-        android:background="#F6A9bD"
-        android:text="SET"
-        android:textColor="#FFFEBB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
 
     <Button
         android:id="@+id/button_reset"
@@ -78,16 +65,16 @@
         android:hint="name of task"
         android:maxLength="30"
         android:text=""
-        android:textSize="25dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FBFAFA"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
+        app:layout_constraintVertical_bias="0.441" />
 
     <Button
         android:id="@+id/done_btn"
@@ -102,13 +89,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.848" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="68dp"
         android:text="HEALTH TRACKER"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#837b86"
@@ -121,7 +108,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="124dp"
         android:text="Pulse Rate:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
@@ -134,12 +121,12 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="124dp"
         android:text="Skin Conductance:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintHorizontal_bias="0.828"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -174,28 +161,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <EditText
-        android:id="@+id/minute"
-        android:layout_width="172dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="148dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Minutes"
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
 
     <ImageView
         android:id="@+id/line"
         android:layout_width="353dp"
         android:layout_height="3dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="256dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

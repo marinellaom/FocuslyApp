@@ -69,20 +69,6 @@
         tools:ignore="SpeakableTextPresentCheck"
         tools:visibility="visible" />
 
-    <Button
-        android:id="@+id/set_time_music"
-        android:layout_width="110dp"
-        android:layout_height="40dp"
-        android:background="#F6A9bD"
-        android:text="SET"
-        android:textColor="#FFFEBB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
-
     <ImageView
         android:id="@+id/rain_button"
         android:layout_width="110dp"
@@ -217,33 +203,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/minute"
-        android:layout_width="110dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="148dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Minutes"
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/set_time_music"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.352" />
-
     <TextView
         android:id="@+id/music_countdown"
         android:layout_width="279dp"
         android:layout_height="123dp"
-        android:layout_marginTop="444dp"
+        android:layout_marginTop="416dp"
         android:text="00:00"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

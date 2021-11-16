@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ConfirmTaskActivity extends AppCompatActivity {
@@ -22,11 +24,10 @@ public class ConfirmTaskActivity extends AppCompatActivity {
 
         /*--DISPLAY USER INPUT--*/
         taskNameDisplay = (TextView) findViewById(R.id.task_name_display);
-        taskNameDisplay.setText(GlobalVariable.taskname);
-
         OnTimeDisplay = (TextView) findViewById(R.id.on_time_display);
         OffTimeDisplay = (TextView) findViewById(R.id.off_time_display);
 
+        taskNameDisplay.setText(GlobalVariable.taskname);
         OnTimeDisplay.setText(GlobalVariable.OnTimer + " minutes");
         OffTimeDisplay.setText(GlobalVariable.OffTimer + " minutes");
 
@@ -40,28 +41,15 @@ public class ConfirmTaskActivity extends AppCompatActivity {
     }
 
 
-
+    /*--- CONFIRM BUTTON ---*/
     public void confirmInput(View displayText){
         displayText.setEnabled(false);
 
-//        Toast.makeText(this, "Confirmed!", Toast.LENGTH_SHORT).show();
-//
-//        Log.d("myLog", "User Input Confirmed");
-//
-//        Intent txt = new Intent(this, OnTaskActivity.class);
+        Toast.makeText(this, "Confirmed!", Toast.LENGTH_SHORT).show();
+        Log.d("myLog", "User Input Confirmed");
 
         Intent i = new Intent(this, OnTaskActivity.class);
-//
-        String taskDisplay = ((TextView)findViewById(R.id.task_name_display)).getText().toString();
-        i.putExtra("TASKDISPLAY", taskDisplay);
-
-
 
         startActivity(i);
-//        startActivity(txt);
-
     }
-
-
-
 }

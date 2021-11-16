@@ -51,8 +51,8 @@ public class SetTaskTimerActivity extends AppCompatActivity{
 
                 /*--- GET AND DISPLAY INFO TO OTHER ACTIVITY (PAGE) ---*/
                 GlobalVariable.taskname = taskName.getText().toString();
-                GlobalVariable.OnTimer = OnSpinner.getSelectedItem().toString();
-                GlobalVariable.OffTimer = OffSpinner.getSelectedItem().toString();
+                GlobalVariable.OnTimer = Long.parseLong(OnSpinner.getSelectedItem().toString());
+                GlobalVariable.OffTimer = Long.parseLong(OffSpinner.getSelectedItem().toString());
 
                 Intent i = new Intent(SetTaskTimerActivity.this, ConfirmTaskActivity.class);
 

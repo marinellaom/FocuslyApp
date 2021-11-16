@@ -1,5 +1,6 @@
 package com.example.focusly;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,21 +23,18 @@ import java.util.Locale;
 
 public class WalkActivity extends AppCompatActivity {
 
-    private TextView taskTimerDisplay;
-    private Button startCountdownTimer;
-    private Button resetCountdownTimer;
+    Button startCountdownTimer;
+    Button resetCountdownTimer;
 
-    private boolean isTimerRunning;
+    boolean isTimerRunning;
 
-    private CountDownTimer taskCountdownTimer;
+    CountDownTimer taskCountdownTimer;
 
-    private long startTimeInput;
-    private long timeLeft;
-    private long endTime;
+    long startTimeInput = GlobalVariable.OffTimer;
+    long timeLeft = startTimeInput * 60000;
+    long endTime;
 
-    //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
-    private EditText editText1;
-    private Button set_button1;
+    TextView OffTaskTimer;
 
     //Image Slider
     SliderView sliderView;
@@ -62,15 +60,19 @@ public class WalkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walk);
 
-        taskTimerDisplay = findViewById(R.id.walk_countdown);
         startCountdownTimer = findViewById(R.id.button_start_pause);
         resetCountdownTimer = findViewById(R.id.button_reset);
+        OffTaskTimer = (TextView) findViewById(R.id.walk_countdown);
 
-        //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
-        editText1 = findViewById(R.id.minute);
-        set_button1 = findViewById(R.id.set_time_walk);
+        /*--TIMER DISPLAY--*/
+        int minutes = (int) ((timeLeft/1000)%3600)/60;
+        int seconds = (int) (timeLeft/1000)%60;
 
-        //EDIT: IMAGE/GIF SLIDER TRYYYY
+        String timeLeftDisplay = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        OffTaskTimer.setText(timeLeftDisplay);
+
+
+        /*--IMAGE SLIDER--*/
         sliderView = findViewById(R.id.walk_slider);
 
         SliderAdapter sliderAdapter = new SliderAdapter(images);
@@ -80,26 +82,6 @@ public class WalkActivity extends AppCompatActivity {
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
         sliderView.startAutoCycle();
 
-
-        //EDIT: TEMPORARY | TRY SET INPUT TIME AS TIMER (SHOULD NOT BE ON SAME PAGE)
-        set_button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String text = editText1.getText().toString();
-                if (text.length() == 0) {
-                    Toast.makeText(WalkActivity.this, "Invalid Input!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                long millisInput = Long.parseLong(text) * 60000;
-                if (millisInput  == 0){
-                    Toast.makeText(WalkActivity.this, "Positive Number Only!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                setTime(millisInput);
-                editText1.setText("");
-
-            }
-        });
 
         // START BUTTON
         startCountdownTimer.setOnClickListener(new View.OnClickListener() {
@@ -123,11 +105,6 @@ public class WalkActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void setTime(long milliseconds){
-        startTimeInput = milliseconds;
-        resetTimer();
     }
 
 
@@ -169,127 +146,76 @@ public class WalkActivity extends AppCompatActivity {
 
     /*---- RESET COUNTDOWN TIMER ----*/
     public void resetTimer(){
-        timeLeft = startTimeInput;
-        updateCountdownText();
+
+        taskCountdownTimer.cancel();
+        timeLeft = GlobalVariable.OnTimer * 60000;
+        int minutes = (int) ((timeLeft/1000)%3600)/60;
+        int seconds = (int) (timeLeft/1000)%60;
+
+        String timeLeftDisplay = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        OffTaskTimer.setText(timeLeftDisplay);
+
         updateTimeInterface();
 
     }
 
     /*---- UPDATE COUNTDOWN TEXT DISPLAY ----*/
     public void updateCountdownText(){
-        int hours = (int) (timeLeft / 1000) / 3600;
+//        taskCountdownTimer.cancel();
+//        timeLeft = GlobalVariable.OnTimer * 60000;
         int minutes = (int) ((timeLeft/1000)%3600)/60;
         int seconds = (int) (timeLeft/1000)%60;
 
-        String timeLeftDisplay;
-        if (hours > 0){
-            timeLeftDisplay = String.format(Locale.getDefault(),
-                    "%d:%02d:%02d", hours, minutes, seconds);
-        } else{
-            timeLeftDisplay = String.format(Locale.getDefault(),
-                    "%02d:%02d", minutes, seconds);
-        }
-
-        taskTimerDisplay.setText(timeLeftDisplay);
-
+        String timeLeftDisplay = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        OffTaskTimer.setText(timeLeftDisplay);
     }
 
     /*---- UPDATE COUNTDOWN BUTTONS | VISIBILITY & BUTTON TEXT ----*/
     public void updateTimeInterface(){
         if(isTimerRunning){
-            editText1.setVisibility(View.INVISIBLE);
-            set_button1.setVisibility(View.INVISIBLE);
-
-            resetCountdownTimer.setVisibility(View.INVISIBLE);
+            resetCountdownTimer.setVisibility(View.VISIBLE);
             startCountdownTimer.setText("PAUSE");
         } else {
-//            editText1.setVisibility(View.VISIBLE);
-//            set_button1.setVisibility(View.VISIBLE);
             startCountdownTimer.setText("START");
 
-//            if (timeLeft < 1000){
-//                startCountdownTimer.setVisibility(View.INVISIBLE);
-//            } else {
-//                startCountdownTimer.setVisibility(View.VISIBLE);
-//            }
-
-            if (timeLeft < startTimeInput) {
-                resetCountdownTimer.setVisibility(View.VISIBLE);
-            } else {
-                resetCountdownTimer.setVisibility(View.INVISIBLE);
-            }
 
             if (timeLeft < 1000){
 
                 /*----DEFAULT TIME----*/
-                timeLeft = 600000;
+                timeLeft = startTimeInput;
                 updateCountdownText();
 
-                /*---- PROCEEDS TO NEXT PAGE IF TIMER IS DONE ----*/
-                /*---- TEMPORARY: IBA PA DAPAT PAGE NA PUPUNTAHAN NETO ----*/
+                /*---- PROCEEDS TO NEXT PAGE IF TIMER IS DONE----*/
                 Intent in = new Intent(WalkActivity.this, OffContinueActivity.class);
                 startActivity(in);
-
-
-//                if(isTimerRunning){
-//                    timeLeft = startTimeInput;
-//                    taskCountdownTimer.cancel();
-//                    updateCountdownText();
-//                }
             }
         }
     }
 
 
     /*---- KEEPS THE TIMER RUNNING ON BACKGROUND OR WHEN ORIENTATION CHANGES----*/
-
-
     @Override
-    protected void onStop() {
-        super.onStop();
-
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-
-        editor.putLong("startTime", startTimeInput);
-        editor.putLong("millisLeft", timeLeft);
-        editor.putBoolean("timerRunning", isTimerRunning);
-        editor.putLong("timeEnd", endTime);
-
-        editor.apply();
-
-        if (taskCountdownTimer != null){
-            taskCountdownTimer.cancel();
-
-        }
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putLong("millisLeft", timeLeft);
+        outState.putBoolean("timerRunning", isTimerRunning);
+        outState.putLong("timeEnd", endTime);
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
 
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-
-        startTimeInput = prefs.getLong("startTime", 600000);
-        timeLeft = prefs.getLong("millisLeft", startTimeInput);
-        isTimerRunning = prefs.getBoolean("timerRunning", false);
-
+        timeLeft = savedInstanceState.getLong("millisLeft");
+        isTimerRunning = savedInstanceState.getBoolean("timerRunning");
 
         updateCountdownText();
         updateTimeInterface();
 
         if(isTimerRunning){
-            endTime = prefs.getLong("timeEnd", 0);
+            endTime = savedInstanceState.getLong("timeEnd");
             timeLeft = endTime - System.currentTimeMillis();
-
-            if (timeLeft < 0){
-                timeLeft = 0;
-                isTimerRunning = false;
-                updateCountdownText();
-                updateTimeInterface();
-            } else {
-                startTimer();
-            }
+            startTimer();
         }
     }
 
@@ -297,15 +223,16 @@ public class WalkActivity extends AppCompatActivity {
     public void doneTaskEarly(View view){
 
         Intent i = new Intent(this, OffContinueActivity.class);
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.wow);
-
-        mediaPlayer.start();
         startActivity(i);
 
         if(isTimerRunning){
-            timeLeft = startTimeInput;
             taskCountdownTimer.cancel();
-            updateCountdownText();
+            timeLeft = GlobalVariable.OnTimer * 60000;
+            int minutes = (int) ((timeLeft/1000)%3600)/60;
+            int seconds = (int) (timeLeft/1000)%60;
+
+            String timeLeftDisplay = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+            OffTaskTimer.setText(timeLeftDisplay);
         }
     }
 

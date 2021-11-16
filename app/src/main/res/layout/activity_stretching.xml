@@ -25,23 +25,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintVertical_bias="0.958"
         tools:ignore="SpeakableTextPresentCheck"
         tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/stretch_countdown"
-        android:layout_width="181dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="500dp"
-        android:text="00:00"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-        android:textColor="#B2ADBC"
-        android:textSize="70dp"
-        android:textStyle="bold"
+    <Button
+        android:id="@+id/button_start_pause"
+        android:layout_width="114dp"
+        android:layout_height="43dp"
+        android:background="@drawable/rounded_corners"
+        android:text="START"
+        android:textColor="#FFFEBB"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.863" />
 
     <Button
         android:id="@+id/done_btn"
@@ -53,58 +53,24 @@
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toEndOf="@+id/button_start_pause"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="0.863" />
 
-    <Button
-        android:id="@+id/button_start_pause"
-        android:layout_width="114dp"
-        android:layout_height="43dp"
-        android:background="@drawable/rounded_corners"
-        android:text="START"
-        android:textColor="#FFFEBB"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/stretch_countdown"
+        android:layout_width="253dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="468dp"
+        android:text="00:00"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#B2ADBC"
+        android:textSize="95dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
-
-    <EditText
-        android:id="@+id/minute"
-        android:layout_width="152dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="148dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Minutes"
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.529"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/set_time_stretch"
-        android:layout_width="102dp"
-        android:layout_height="40dp"
-        android:background="#F6A9bD"
-        android:text="SET"
-        android:textColor="#FFFEBB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
-        app:layout_constraintStart_toEndOf="@+id/minute"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"

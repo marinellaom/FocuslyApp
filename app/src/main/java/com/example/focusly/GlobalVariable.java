@@ -4,7 +4,7 @@ public class GlobalVariable {
 
     public static String taskname;
 
-    public static String OnTimer;
-    public static String OffTimer;
+    public static Long OnTimer;
+    public static Long OffTimer;
 
 }

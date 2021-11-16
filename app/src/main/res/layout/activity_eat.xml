@@ -25,34 +25,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintVertical_bias="0.958"
         tools:ignore="SpeakableTextPresentCheck"
         tools:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="353dp"
-        android:layout_height="3dp"
-        android:layout_marginTop="160dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_health_tracker" />
-
-    <TextView
-        android:id="@+id/eat_countdown"
-        android:layout_width="205dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="488dp"
-        android:text="00:00"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-        android:textColor="#B2ADBC"
-        android:textSize="80dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_start_pause"
@@ -66,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.299"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <Button
         android:id="@+id/done_btn"
@@ -81,21 +56,33 @@
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toEndOf="@+id/button_start_pause"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="0.863" />
 
-    <Button
-        android:id="@+id/set_time_eat"
-        android:layout_width="116dp"
-        android:layout_height="40dp"
-        android:background="#F6A9bD"
-        android:text="SET"
-        android:textColor="#FFFEBB"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="353dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toEndOf="@+id/minute"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
+        app:srcCompat="@drawable/bg_health_tracker" />
+
+    <TextView
+        android:id="@+id/eat_countdown"
+        android:layout_width="248dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="448dp"
+        android:text="00:00"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#B2ADBC"
+        android:textSize="95dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
@@ -169,24 +156,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/minute"
-        android:layout_width="152dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="148dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Minutes"
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.495" />
 
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/eat_slider"
