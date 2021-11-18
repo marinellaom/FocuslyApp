@@ -34,41 +34,44 @@
         app:layout_constraintVertical_bias="0.386" />
 
     <TextView
+        android:id="@+id/msg5"
+        android:layout_width="323dp"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:text="hardwork is the key to success."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437" />
+
+    <TextView
         android:id="@+id/msg2"
         android:layout_width="232dp"
         android:layout_height="44dp"
+        android:gravity="center"
         android:text="Always remember that "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
-
-    <TextView
-        android:id="@+id/msg5"
-        android:layout_width="323dp"
-        android:layout_height="51dp"
-        android:text="hardwork is the key to success."
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.707"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.384" />
 
     <TextView
         android:id="@+id/msg"
         android:layout_width="268dp"
         android:layout_height="47dp"
         android:text="Off Task Finished"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,7 +86,8 @@
         android:layout_width="205dp"
         android:layout_height="42dp"
         android:text="You did a great job!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

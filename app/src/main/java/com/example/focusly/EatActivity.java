@@ -4,16 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -36,9 +34,10 @@ public class EatActivity extends AppCompatActivity {
 
     TextView OffTaskTimer;
 
-    //Image Slider
-    SliderView sliderView;
-    int[] images = {R.drawable.teat1,
+    private static final long IMAGE_UPDATE_DELAY_MILLIS = 8000;
+
+    private static final int[] ALL_DRAWABLE_RES = new int[] {
+            R.drawable.teat1,
             R.drawable.teat2,
             R.drawable.teat3,
             R.drawable.teat4,
@@ -52,7 +51,13 @@ public class EatActivity extends AppCompatActivity {
             R.drawable.beat2,
             R.drawable.beat3,
             R.drawable.beat4,
-            R.drawable.beat5};
+            R.drawable.beat5
+    };
+
+    private int currentDrawableResIndex;
+    private ImageView imageView;
+    private Runnable updateImageTask;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,16 +75,15 @@ public class EatActivity extends AppCompatActivity {
         String timeLeftDisplay = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         OffTaskTimer.setText(timeLeftDisplay);
 
+        /*--MULTIPLE IMAGE DISPLAY--*/
+        updateImageTask = new EatActivity.UpdateImageTask();
 
-        /*--IMAGE SLIDER--*/
-        sliderView = findViewById(R.id.eat_slider);
+        imageView = (ImageView) findViewById(R.id.image_display);
 
-        SliderAdapter sliderAdapter = new SliderAdapter(images);
-
-        sliderView.setSliderAdapter(sliderAdapter);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
-        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
-        sliderView.startAutoCycle();
+        currentDrawableResIndex = 0;
+        imageView.setImageResource(ALL_DRAWABLE_RES[0]);
+        imageView.removeCallbacks(updateImageTask);
+        imageView.postDelayed(updateImageTask, IMAGE_UPDATE_DELAY_MILLIS);
 
 
         // START BUTTON
@@ -103,6 +107,30 @@ public class EatActivity extends AppCompatActivity {
             }
         });
     }
+
+    //NEW EDIT TRYYYYY
+    private class UpdateImageTask implements Runnable {
+        @Override
+        public void run() {
+            currentDrawableResIndex++;
+
+            if (currentDrawableResIndex < ALL_DRAWABLE_RES.length) {
+                imageView.setImageResource(ALL_DRAWABLE_RES[currentDrawableResIndex]);
+                imageView.postDelayed(this, IMAGE_UPDATE_DELAY_MILLIS);
+            } else {
+                imageView.setImageResource(R.drawable.teat1);
+            }
+        }
+    }
+
+    //NEW EDIT TRYYYYY
+    @Override
+    protected void onStop() {
+        super.onStop();
+        imageView.setImageResource(R.drawable.teat1);
+        imageView.removeCallbacks(updateImageTask);
+    }
+
 
 
     /*---- COUNTDOWN | START PAUSE BUTTON ----*/

@@ -12,25 +12,24 @@
         android:id="@+id/line"
         android:layout_width="353dp"
         android:layout_height="3dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="180dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_health_tracker" />
 
     <TextView
         android:id="@+id/walk_countdown"
-        android:layout_width="257dp"
-        android:layout_height="114dp"
+        android:layout_width="365dp"
+        android:layout_height="149dp"
         android:layout_marginTop="452dp"
+        android:gravity="center"
         android:text="00:00"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#B2ADBC"
         android:textSize="95dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,6 +72,7 @@
         android:padding="10dp"
         android:scaleType="fitCenter"
         android:text="RESET"
+        android:textSize="12dp"
         android:textColor="#F6A9bD"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -109,18 +109,18 @@
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.113" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="80dp"
         android:text="Skin Conductance:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#837b86"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,7 +128,7 @@
         android:id="@+id/skin_conductance"
         android:layout_width="168dp"
         android:layout_height="45dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="120dp"
         android:background="@color/white"
         android:ems="10"
         android:gravity="center"
@@ -137,7 +137,7 @@
         android:text=""
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toEndOf="@+id/pulse_rate"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,8 +145,8 @@
         android:id="@+id/pulse_rate"
         android:layout_width="168dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
         android:background="@color/white"
         android:ems="10"
         android:gravity="center"
@@ -157,44 +157,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/walk_slider"
-        android:layout_width="368dp"
-        android:layout_height="212dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
-        app:sliderAnimationDuration="1000"
-        app:sliderAutoCycleDirection="back_and_forth"
-        app:sliderAutoCycleEnabled="true"
-        app:sliderIndicatorAnimationDuration="1000"
-        app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorMargin="15dp"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="3dp"
-        app:sliderIndicatorRadius="2dp"
-        app:sliderIndicatorSelectedColor="#5a5a5a"
-        app:sliderScrollTimeInSec="20"
-        app:sliderStartAutoCycle="true"
-        tools:ignore="MissingConstraints">
+    <!--    <com.smarteist.autoimageslider.SliderView-->
+<!--        android:id="@+id/walk_slider"-->
+<!--        android:layout_width="320dp"-->
+<!--        android:layout_height="190dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.511"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.435"-->
+<!--        app:sliderAnimationDuration="1000"-->
+<!--        app:sliderAutoCycleDirection="back_and_forth"-->
+<!--        app:sliderAutoCycleEnabled="true"-->
+<!--        app:sliderIndicatorAnimationDuration="1000"-->
+<!--        app:sliderIndicatorGravity="center_horizontal|bottom"-->
+<!--        app:sliderIndicatorMargin="15dp"-->
+<!--        app:sliderIndicatorOrientation="horizontal"-->
+<!--        app:sliderIndicatorPadding="3dp"-->
+<!--        app:sliderIndicatorRadius="2dp"-->
+<!--        app:sliderIndicatorSelectedColor="#5a5a5a"-->
+<!--        app:sliderScrollTimeInSec="20"-->
+<!--        app:sliderStartAutoCycle="true"-->
+<!--        tools:ignore="MissingConstraints">-->
 
-    </com.smarteist.autoimageslider.SliderView>
+<!--    </com.smarteist.autoimageslider.SliderView>-->
 
     <TextView
         android:id="@+id/task_display"
-        android:layout_width="280dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="172dp"
+        android:layout_width="376dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="196dp"
         android:gravity="left"
         android:maxLength="30"
         android:text="OFF TASK ACTIVITY: WALK"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/white"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_display"
+        android:layout_width="344dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="244dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

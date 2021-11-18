@@ -12,7 +12,7 @@
         android:layout_width="161dp"
         android:layout_height="57dp"
         android:layout_marginStart="124dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="308dp"
         android:background="@drawable/rounded_corners"
         android:text="NEXT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -31,14 +31,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.324" />
 
     <TextView
         android:id="@+id/msg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Great job! You've worked hard."
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="You deserve a break for now."
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,8 +67,9 @@
         android:id="@+id/msg"
         android:layout_width="184dp"
         android:layout_height="33dp"
+        android:gravity="center"
         android:text="On Task Finished!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,6 +77,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.267" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

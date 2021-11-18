@@ -13,45 +13,59 @@
         android:theme="@style/Theme.Focusly">
         <activity
             android:name=".OverviewActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".OffContinueActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".DoneOffTaskActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".EatActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".WalkActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".StretchingActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".MusicActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".OffTaskOptionsActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".ContinueActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".DoneOnTaskActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".OnTaskActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".ConfirmTaskActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".SetTaskTimerActivity"
+            android:hardwareAccelerated="false"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:hardwareAccelerated="false"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -16,7 +16,7 @@
         android:background="@drawable/rounded_corners"
         android:onClick="confirmInput"
         android:text="CONFIRM"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFEBB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -48,48 +48,49 @@
         app:layout_constraintVertical_bias="0.328" />
 
     <TextView
-        android:id="@+id/tasklabel4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OFF TIME: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#F6A9BD"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
-
-    <TextView
         android:id="@+id/msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TO DO: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.312" />
 
     <TextView
-        android:id="@+id/task_name_display"
+        android:id="@+id/msg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="WORK TIME: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="0.403" />
+
+    <TextView
+        android:id="@+id/tasklabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OFF TIME: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#F6A9BD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467" />
 
     <TextView
         android:id="@+id/msg6"
@@ -122,48 +123,47 @@
         app:layout_constraintVertical_bias="0.175" />
 
     <TextView
-        android:id="@+id/msg2"
+        android:id="@+id/off_time_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WORK TIME: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="min/sec"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintHorizontal_bias="0.883"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.467" />
 
     <TextView
         android:id="@+id/on_time_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="min/sec"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.403" />
 
     <TextView
-        android:id="@+id/off_time_display"
+        android:id="@+id/task_name_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="min/sec"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#F6A9BD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.312" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,6 +58,7 @@
         android:padding="10dp"
         android:scaleType="fitCenter"
         android:text="RESET"
+        android:textSize="12dp"
         android:textColor="#F6A9bD"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -205,10 +206,12 @@
 
     <TextView
         android:id="@+id/music_countdown"
-        android:layout_width="279dp"
-        android:layout_height="123dp"
+        android:layout_width="384dp"
+        android:layout_height="167dp"
         android:layout_marginTop="416dp"
+        android:gravity="center"
         android:text="00:00"
+        android:textSize="100dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
