@@ -18,67 +18,84 @@
         android:theme="@style/Theme.Focusly">
         <activity
             android:name=".bluetoothControl"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".DeviceList"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".BreathingActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".OverviewActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".OffContinueActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".DoneOffTaskActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".EatActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".WalkActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".StretchingActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".MusicActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".OffTaskOptionsActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".ContinueActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".DoneOnTaskActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".OnTaskActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".ConfirmTaskActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".SetTaskTimerActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:hardwareAccelerated="false">
             <intent-filter>
